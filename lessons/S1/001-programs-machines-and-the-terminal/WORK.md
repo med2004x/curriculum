@@ -42,12 +42,12 @@ In PowerShell, from the repository root:
 
 ```powershell
 Set-Location ./lessons/S1/001-programs-machines-and-the-terminal/code
-gcc -std=c17 -Wall -Wextra -Wpedantic task_01.c -o task_01.exe
-./task_01.exe
+make task_01
+.\task_01.exe
 $LASTEXITCODE
 ```
 
-Build each task file separately; each has its own `main` function. For example, run `gcc -std=c17 -Wall -Wextra -Wpedantic task_01.c -o task_01.exe`, then `./task_01.exe`. Repeat for the file you are working on, using its name for the executable. Return to the repository root with `Set-Location ../../..`.
+Each task has its own `main` function, so build one at a time with `make arith` and run it with `.\arith.exe` in PowerShell (or `./arith.exe` in Linux/WSL). To build all six programs, run `make`. The Makefile keeps the compiler and warning options out of your way. To check all six output contracts, run `make check` from this folder.
 
 This Windows environment needs a complete C toolchain first. A compiler executable without the C standard headers is not enough. Follow [`SETUP.md`](../../../SETUP.md).
 

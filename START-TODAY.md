@@ -18,12 +18,12 @@ This machine has a `clang.exe` binary but no C standard headers, and no GCC. It 
 
 ```powershell
 Set-Location ./lessons/S1/001-programs-machines-and-the-terminal/code
-gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
-./exercise.exe
+make exercise
+.\exercise.exe
 $LASTEXITCODE
 ```
 
-The starter files intentionally do not yet produce the required output. Complete the six tasks, then return to the repository root (`Set-Location ../../..`) and run `python tools/check_lesson_001.py`.
+The starter files intentionally do not yet produce the required output. Complete the six tasks, then return to the repository root (`Set-Location ../../..`) and run `python tools/check_lesson_001.py`. The Makefile holds the compiler flags; you only need to name the program you want to build.
 
 ## Semester courses
 

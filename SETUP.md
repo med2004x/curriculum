@@ -10,7 +10,7 @@ This checkout currently has Python, but its available `clang.exe` has no C stand
 2. Open the **MSYS2 UCRT64** terminal and run:
 
    ```sh
-   pacman -S mingw-w64-ucrt-x86_64-gcc
+   pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make
    ```
 
 3. In PowerShell, add the default compiler folder to this terminal session (adjust if you chose a different MSYS2 install folder), then check it:
@@ -18,6 +18,7 @@ This checkout currently has Python, but its available `clang.exe` has no C stand
    ```powershell
    $env:Path = "C:\msys64\ucrt64\bin;$env:Path"
    gcc --version
+   make --version
    python --version
    ```
 
@@ -27,7 +28,7 @@ If compilation says `stdio.h` is missing, the compiler is installed without its 
 
 ## Linux / WSL
 
-Install GCC and Python 3 using your distribution's package manager. Confirm both with `gcc --version` and `python3 --version`, then follow the shell commands in the lesson.
+Install GCC, GNU Make, and Python 3 using your distribution's package manager (for example, `sudo apt install build-essential make python3`). Confirm with `gcc --version`, `make --version`, and `python3 --version`, then follow the shell commands in the lesson.
 
 ## Later tools
 

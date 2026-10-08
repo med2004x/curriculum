@@ -106,17 +106,17 @@ Read every token:
 - `"hello\n"` is a string; `\n` is one newline byte (`0x0a`).
 - `return 0;` ends the process with status 0.
 
-Build and run:
+The folder includes a `Makefile`: it remembers the compiler options so you can focus on the program. From this folder, build and run the example with:
 
-```text
-gcc -Wall -Wextra -std=c11 hello.c -o hello
-./hello
-echo $?
+```powershell
+make hello.exe
+.\hello.exe
+$LASTEXITCODE
 ```
 
-Always build with `-Wall -Wextra`. The compiler will warn about mistakes that are legal C but almost never intended. Treat a warning as a bug report.
+The Makefile enables `-Wall -Wextra` for you. The compiler will warn about mistakes that are legal C but almost never intended. Treat a warning as a bug report. To build every program in this lesson, run `make`.
 
-The `./` matters. The shell searches directories listed in `PATH` for a bare name, and the current directory is deliberately not in it. `./hello` says "the file named `hello` in this directory".
+The `./` (or PowerShell's `.` prefix) matters. The shell searches directories listed in `PATH` for a bare name, and the current directory is deliberately not in it. The prefix says "run the file in this directory".
 
 ## 5. Predict, then observe
 
