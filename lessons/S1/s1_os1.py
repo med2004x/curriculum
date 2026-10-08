@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Systèmes d'exploitation 1
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 009 — Files, Paths, Arguments, and Permissions
 #
 # ## What you must be able to do

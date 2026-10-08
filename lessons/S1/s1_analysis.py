@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Analyse 1
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 006 — Functions, the Call Stack, and Debugging
 #
 # ## Scope

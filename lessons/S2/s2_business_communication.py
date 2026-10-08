@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Business Communication 2 (English)
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 065 — Go HTTP, JSON, and SQL
 #
 # ## Scope

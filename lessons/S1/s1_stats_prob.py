@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Statistiques et probabilités
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 019 — Searching, Sorting, and Measuring Work
 #
 # ## Scope

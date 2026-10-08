@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Comptabilité générale
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 012 — Integrated Lab 1: Small C CLI
 #
 # ## Scope

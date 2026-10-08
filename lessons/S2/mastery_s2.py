@@ -58,7 +58,7 @@
 # # Shared elective-slot exercise
 # # # FSEGS LIG — Unnamed “une matière au choix” slots
 # #
-# # **Semester:** S1 and S2  
+# # **Semester:** S1 and S2
 # # **Attached engineering lesson:** 001 — Programs, Machines, and the Terminal
 # #
 # # The supplied LIG checklist records an unnamed elective slot for each semester. The current official maquette and selected ECUE titles were not included in this repository. Verify the slot with your institution and instructor; do not invent a subject.

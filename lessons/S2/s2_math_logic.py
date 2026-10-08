@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Logique mathématique
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 038 — Recursion, Dynamic Programming, and Recurrences
 #
 # ## Scope

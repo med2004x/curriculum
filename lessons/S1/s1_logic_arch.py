@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Systèmes logiques et architecture des ordinateurs
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 022 — Logic Gates and the CPU Datapath
 #
 # ## Scope

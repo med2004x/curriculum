@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Algorithmique et structures de données 2
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 036 — Core Algorithms in Go
 #
 # ## Scope

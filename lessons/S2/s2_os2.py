@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Systèmes d'exploitation 2
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 058 — Processes, Threads, and Scheduling Revisited
 #
 # ## Scope

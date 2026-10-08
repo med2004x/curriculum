@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Compétences numériques
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 003 — Types, Number Systems, and Git
 #
 # ## Scope

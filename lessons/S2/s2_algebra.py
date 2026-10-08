@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Algèbre
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 037 — Trees, Graphs, and Discrete Structure
 #
 # ## Scope

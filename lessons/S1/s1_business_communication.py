@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Business Communication 1 (English)
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 011 — Testing, Verification, and Reading Code
 #
 # ## Scope

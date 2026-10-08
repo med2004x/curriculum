@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Principes de gestion
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 020 — Foundations Project: In-Memory Data Tool
 #
 # ## Scope

@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Gestion financière
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 059 — Queues, Scheduling, and Throughput
 #
 # ## Scope

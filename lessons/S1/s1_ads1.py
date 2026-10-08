@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Algorithmique et structures de données 1
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 004 — Conditions, Logic, and Proof Thinking
 #
 # ## What you must be able to do

@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Initiation aux bases de données + Technologies multimédias
 #
-# **Semester:** S1  
+# **Semester:** S1
 # **Attached engineering lesson:** 048 — PostgreSQL, psql, and Relational Thinking
 #
 # This pack contains practice material for the database and multimedia subjects attributed to S1 in the supplied checklist. Confirm the official status and exact scope of each course with the current institution syllabus.

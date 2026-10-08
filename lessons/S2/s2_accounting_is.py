@@ -3,7 +3,7 @@
 
 # # FSEGS LIG — Système d'information comptable
 #
-# **Semester:** S2  
+# **Semester:** S2
 # **Attached engineering lesson:** 050 — CRUD, Transactions, and Safe State
 #
 # ## Scope
