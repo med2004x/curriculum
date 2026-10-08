@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Course: validate structure",
+      "type": "shell",
+      "command": "python tools/validate_course.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Course: validate strict",
+      "type": "shell",
+      "command": "python tools/validate_course.py --strict",
+      "problemMatcher": []
+    },
+    {
+      "label": "Course: math sanity checks",
+      "type": "shell",
+      "command": "python tools/math_check.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Course: Go tests",
+      "type": "shell",
+      "command": "python tools/go_test_all.py",
+      "problemMatcher": []
+    }
+  ]
+}
