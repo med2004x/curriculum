@@ -1,3 +1,15 @@
+/*
+ * STUDENT PROBLEM SET — Lesson 085.
+ * Read the lecture, then solve these tasks before opening any worked examples:
+ * 1. Build the smallest useful version: If using BusTub directly, complete at least the buffer pool manager project and the B+ tree index project from the official course materials (`https://github.com/cmu-db/bustub`), using its existing test infrastructure to verify correctness — this is the recommended default path, since BusTub's tests are considerably more rigorous than what's practical to con.
+ * 2. Extend it with one explicit boundary case: If building your own integrated system instead (a reasonable alternative if you want the components to be ones you fully wrote yourself, end to end), integrate your own Lessons 1-6 implementations into one coherent system with this minimum scope:
+ * 3. Rebuild the same behavior with one changed constraint: **Storage layer**: your Lesson 1 page format, with records actually read/written through your Lesson 2 buffer pool (not bypassing it) — every page access in the rest of the system should go through `fetchPage`/`unpinPage`, with correct pin discipline throughout. Do not open the reference implementation until your own attempt has been saved.
+ * Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+ */
+/* PROBLEM STARTER — Lesson 085: Database Internals Lab
+ * Your task: implement hit/miss tracking and justify a replacement policy. add a constraint that rejects negative values, then query the rows in descending order. write the validation query.
+ * Read ../README.md for the concept; follow ../WORK.md for the problem and checks. demo_* files are worked examples, not your submission.
+ */
 #include <stdio.h>
 
 typedef struct {
@@ -6,10 +18,8 @@ typedef struct {
 } BufferPool;
 
 static int fetch(BufferPool *pool, int page_id) {
-    /* TODO: implement hit/miss tracking and justify a replacement policy. */
-    (void)pool;
-    (void)page_id;
-    return -1;
+    /* TODO: implement the assigned behavior. */
+    return 0;
 }
 
 int main(void) {

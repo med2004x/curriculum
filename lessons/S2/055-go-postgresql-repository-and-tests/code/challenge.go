@@ -7,8 +7,11 @@ type Repository interface {
 }
 
 func createWithRetry(ctx context.Context, repo Repository, title string) error {
-	// CHALLENGE TODO: define which database failures are retryable and keep the operation safe.
-	return nil
+    // TODO: implement the assigned behavior.
+    return nil
 }
 
 func main() {}
+
+// Keep starter imports available while the student implementation is unfinished.
+var _ context.Context

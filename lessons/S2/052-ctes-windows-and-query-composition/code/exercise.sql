@@ -1,18 +1,12 @@
+-- STUDENT PROBLEM SET — Lesson 052.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Write a query that ranks events newest-first within each task.
+-- 2. Put the ranking query in a CTE and select the latest event per task.
+-- 3. Add a tie-breaker and compare `ROW_NUMBER` with `RANK` when timestamps tie. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 052: CTEs, Window Functions, and Query Composition
+-- Your task: rank each customer's orders by amount and compute a running total.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: CTE + window function.
 -- TODO: rank each customer's orders by amount and compute a running total.
-
-WITH ranked AS (
-    SELECT
-        o.*,
-        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY total_cents DESC) AS rn
-    FROM orders AS o
-)
-SELECT
-    customer_id,
-    id,
-    total_cents,
-    rn,
-    SUM(total_cents) OVER (PARTITION BY customer_id ORDER BY id) AS running_total
-FROM ranked
-WHERE rn <= 3
-ORDER BY customer_id, rn;
+-- TODO: write the assigned SQL from the problem statement.

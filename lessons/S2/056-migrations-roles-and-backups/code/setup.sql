@@ -1,3 +1,4 @@
+/* FIXTURE: Disposable schema and rows for migration practice; do not use as a migration. */
 CREATE TABLE IF NOT EXISTS app.accounts (
     id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     owner_name text NOT NULL,

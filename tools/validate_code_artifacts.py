@@ -37,7 +37,9 @@ for lesson in lesson_dirs:
 
     exercise = list((lesson / "code").glob("exercise.*")) + list((lesson / "code").glob("exercise/main.*"))
     if not exercise:
-        failures.append(f"{lesson.name}: no exercise starter under code/")
+        marked_tasks = [p for p in (lesson / "code").rglob("*") if p.is_file() and p.suffix.lower() in {".c", ".go", ".rs", ".sql"} and "STUDENT TASK" in p.read_text(errors="replace")]
+        if not marked_tasks:
+            failures.append(f"{lesson.name}: no marked student task under code/")
 
     if "[starter content intentionally omitted]" in text:
         failures.append(f"{lesson.name}: omitted starter content marker remains")

@@ -1,13 +1,13 @@
+-- STUDENT PROBLEM SET — Lesson 051.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Query task/tag pairs by joining all three tables.
+-- 2. Add a left join so tasks without tags remain visible.
+-- 3. Aggregate tag counts per task and add a `HAVING` condition on the count. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 051: Joins, Aggregation, and Data Processing
+-- Your task: report each customer, order count, and total spend.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: joins + aggregation.
 -- TODO: report each customer, order count, and total spend.
 -- Keep customers with zero orders.
-
-SELECT
-    c.id,
-    c.name,
-    COUNT(o.id) AS order_count,
-    COALESCE(SUM(o.total_cents), 0) AS total_cents
-FROM customer AS c
-LEFT JOIN orders AS o ON o.customer_id = c.id
-GROUP BY c.id, c.name
-ORDER BY c.id;
+-- TODO: write the assigned SQL from the problem statement.

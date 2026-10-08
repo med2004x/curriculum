@@ -30,7 +30,7 @@ These primary course repositories are the assessment references for the DART les
 - MIT 6.5840 distributed systems labs: https://pdos.csail.mit.edu/6.5840/ (source checkout: git://g.csail.mit.edu/6.5840-golabs-2026) (lesson 090)
 - CMU BusTub database project and tests: https://github.com/cmu-db/bustub (lesson 085)
 
-DART's lessons 064, 085, and 090 now direct learners to these upstream assignments and record the selected upstream commit and test output in `EVIDENCE.md`. The DART structural validators do not claim to run these external test suites.
+DART's lessons 064, 085, and 090 direct learners to these upstream assignments and ask them to record the selected commit and test output in `EVIDENCE.md`. The structural validators do not run these external test suites. For smaller lessons, use the per-lesson test file or checker where one is present; an unfinished starter is not considered passed merely because it compiles.
 
 
 ## Semester course exercises

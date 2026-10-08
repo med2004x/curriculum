@@ -1,7 +1,10 @@
+/*
+ * STUDENT PROBLEM — implement this file; it contains no worked solution.
+ * Assignment: `string_report.c`: report `sizeof`, `strlen`, and the final-byte value for a C string.
+ */
 #include <stdio.h>
 
 int main(void) {
-    int a[5] = {10, 20, 30, 40, 50};
-    printf("%d\n", a[5]);
+    /* TODO: implement the problem described above. */
     return 0;
 }

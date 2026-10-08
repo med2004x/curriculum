@@ -1,4 +1,2 @@
-migrations/
-    001_add_description.up.sql
-    001_add_description.down.sql
-compatibility-matrix.md
+-- STUDENT TASK (DOWN): Reverse the up migration without dropping unrelated columns or data.
+-- TODO: write the migration SQL and verify it against the disposable schema in setup.sql.

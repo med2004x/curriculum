@@ -1,3 +1,4 @@
+/* TEST HARNESS: A supplied check driver; keep it unchanged while implementing the task. */
 #include <stdio.h>
 #include <stdlib.h>
 

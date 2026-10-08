@@ -1,5 +1,5 @@
 # Code artifact rules
 
-`demo_*` is complete reference code. `pattern_*` is an incomplete reference pattern. `exercise.*` is the student implementation file. `challenge.*` is a separate, harder task and must differ in behavior or constraints, not just wording. `*_test.go` and `check.c` are executable checks; skipped tests are not checks.
+`demo_*` is a complete worked example. `pattern_*` is an incomplete reference pattern. The files named by the lesson's `Build from blank` problem are student tasks; `exercise.*` is the integrated starter. Their assignment is repeated in source comments and `WORK.md`. Do not treat a completed file as a task: only files marked `STUDENT TASK` or `STUDENT PROBLEM` are student work. `challenge.*` is a separate, harder task and must differ in behavior or constraints, not just wording. `*_test.go` and `check_*.py` are executable checks; skipped tests are not checks.
 
-Selected lessons include labeled reference examples under `code/reference/`; the restored-file manifest records their provenance. These are not hidden solutions to the current exercise. Official large course labs are linked from the relevant lesson and remain in their upstream repositories rather than being copied into this curriculum.
+Selected lessons include reference examples under `code/reference/`; these are study material to open after attempting the problem. Official large course labs are linked from the relevant lesson and their original test harnesses remain in their upstream repositories.

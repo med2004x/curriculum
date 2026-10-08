@@ -1,8 +1,14 @@
+-- STUDENT PROBLEM SET — Lesson 054.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Implement a balance adjustment as one atomic parameterized `UPDATE` and define its expected row-count behavior.
+-- 2. Design a two-account transfer transaction using stable row-lock ordering and rollback on any failed validation.
+-- 3. Compare the expected conflict behavior under Read Committed, Repeatable Read, and Serializable for a stated two-session schedule. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 054: Isolation, Locks, and Concurrency
+-- Your task: reproduce the blocking behavior, then change isolation/locking deliberately. pause here and coordinate with Session B.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: concurrent sessions.
 -- Session A and Session B should be run in separate psql terminals.
 -- TODO: reproduce the blocking behavior, then change isolation/locking deliberately.
-
-BEGIN;
-SELECT * FROM accounts WHERE id = 1 FOR UPDATE;
 -- TODO: pause here and coordinate with Session B.
-COMMIT;
+-- TODO: write the assigned SQL from the problem statement.

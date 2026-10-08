@@ -1,18 +1,15 @@
-# Lesson 081 Evidence
+# Work record
 
-Lesson: Pages, Records, and Buffer Pools
+Lesson: Lesson 081 — Pages, Records, and Buffer Pools
 
-## Retrieval
-Record the three pre-lecture predictions from `WORK.md`.
+## Problems completed
+List each assigned problem and the files you changed.
 
-## Build
-Record the exact command used to run the automated page-record checks: `gcc -std=c17 -Wall -Wextra -Wpedantic check.c -o check && ./check`. Include the output and any additional insertion/compaction tests.
+## Checks
+Record the exact commands you ran and their output. Include one normal case, one boundary case, and one failure case. If a compiler, database, or upstream lab is unavailable, name the blocked check instead of claiming it passed.
 
-## Failure reproduction
-Record one deliberately reproduced failure, the diagnosis, and the repair.
+## Debugging
+Describe one failed attempt, what caused it, and the change that fixed it.
 
-## Transfer
-Record the changed constraint and how the invariant was preserved.
-
-## Gate
-Record your five gate decisions from `WORK.md` before moving on.
+## Reasoning
+State the invariant, contract, or design decision your solution relies on. Add one changed-input or changed-constraint test that supports your reasoning.

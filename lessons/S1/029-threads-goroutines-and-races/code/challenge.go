@@ -6,18 +6,7 @@ import (
 )
 
 func incrementMany(total *int, workers, increments int) {
-	// CHALLENGE TODO: make the shared update race-free and explain why.
-	var wg sync.WaitGroup
-	wg.Add(workers)
-	for i := 0; i < workers; i++ {
-		go func() {
-			defer wg.Done()
-			for j := 0; j < increments; j++ {
-				*total++
-			}
-		}()
-	}
-	wg.Wait()
+    // TODO: implement the assigned behavior.
 }
 
 func main() {
@@ -25,3 +14,7 @@ func main() {
 	incrementMany(&total, 4, 1000)
 	fmt.Println(total)
 }
+
+// Keep starter imports available while the student implementation is unfinished.
+var _ = fmt.Println
+var _ sync.WaitGroup

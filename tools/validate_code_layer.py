@@ -24,6 +24,11 @@ for lesson in lessons:
         if re.search(r"return input\b", s):
             issues.append(f"{lesson.name}: identity stub in student file: {p.relative_to(code)}")
     for p in files:
+        if p.suffix.lower() in {".c", ".go", ".rs", ".sql"} and "STUDENT TASK" in p.read_text(errors="ignore"):
+            s = p.read_text(errors="ignore")
+            if "TODO" not in s and "not implemented" not in s.lower() and not p.name.endswith("_test.go"):
+                issues.append(f"{lesson.name}: marked student task has no unfinished work: {p.relative_to(code)}")
+    for p in files:
         if p.suffix in {".c", ".go", ".rs", ".sql", ".py", ".sh"}:
             s=p.read_text(errors="ignore")
             if "starter content intentionally omitted" in s.lower():

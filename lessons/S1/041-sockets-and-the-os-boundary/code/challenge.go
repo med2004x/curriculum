@@ -6,9 +6,8 @@ import (
 )
 
 func handle(conn net.Conn) error {
-	defer conn.Close()
-	// CHALLENGE TODO: read one request and write one correct response.
-	return nil
+    // TODO: implement the assigned behavior.
+    return nil
 }
 
 func main() {
@@ -24,3 +23,7 @@ func main() {
 	}
 	_ = handle(conn)
 }
+
+// Keep starter imports available while the student implementation is unfinished.
+var _ = fmt.Println
+var _ net.Conn

@@ -1,3 +1,4 @@
+/* FIXTURE: Input data generator for the process scheduling lab. */
 INSERT INTO app.tasks (
     project_id,
     title,

@@ -1,18 +1,16 @@
+-- STUDENT PROBLEM SET — Lesson 048.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Connect with `psql` and inspect connection identity, database, schema, tables, and roles.
+-- 2. Query `app.tasks` for selected columns and filter rows with a `WHERE` predicate.
+-- 3. Compare duplicates, NULL predicates, and result ordering with and without the relevant SQL clauses. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 048: PostgreSQL, psql, and Relational Thinking
+-- Your task: create customers and orders with primary/foreign keys. insert at least three customers and five orders. write one SELECT that proves the relationship. INSERT test data here.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: model a small shop relationally.
 -- TODO 1: create customers and orders with primary/foreign keys.
 -- TODO 2: insert at least three customers and five orders.
 -- TODO 3: write one SELECT that proves the relationship.
-
-CREATE TABLE customers (
-    id BIGSERIAL PRIMARY KEY,
-    name TEXT NOT NULL
-);
-
-CREATE TABLE orders (
-    id BIGSERIAL PRIMARY KEY,
-    customer_id BIGINT NOT NULL REFERENCES customers(id),
-    total_cents INTEGER NOT NULL CHECK (total_cents >= 0)
-);
-
 -- TODO: INSERT test data here.
 -- TODO: SELECT the joined result here.
+-- TODO: write the assigned SQL from the problem statement.

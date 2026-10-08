@@ -1,18 +1,15 @@
-# Lesson 015 Evidence
+# Work record
 
-Lesson: Undefined Behavior, Sanitizers, and Defensive Debugging
+Lesson: Lesson 015 — Undefined Behavior, Sanitizers, and Defensive Debugging
 
-## Retrieval
-Record the three pre-lecture predictions from `WORK.md`.
+## Problems completed
+List each assigned problem and the files you changed.
 
-## Build
-Record the exact commands used to build and run `code/exercise.c`.
+## Checks
+Record the exact commands you ran and their output. Include one normal case, one boundary case, and one failure case. If a compiler, database, or upstream lab is unavailable, name the blocked check instead of claiming it passed.
 
-## Failure reproduction
-Record one deliberately reproduced failure, the diagnosis, and the repair.
+## Debugging
+Describe one failed attempt, what caused it, and the change that fixed it.
 
-## Transfer
-Record the changed constraint and how the invariant was preserved.
-
-## Gate
-Record your five gate decisions from `WORK.md` before moving on.
+## Reasoning
+State the invariant, contract, or design decision your solution relies on. Add one changed-input or changed-constraint test that supports your reasoning.

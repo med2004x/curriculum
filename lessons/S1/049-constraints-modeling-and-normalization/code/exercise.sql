@@ -1,10 +1,14 @@
+-- STUDENT PROBLEM SET — Lesson 049.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Define task, tag, and task-tag association tables with primary and foreign keys.
+-- 2. Add `UNIQUE`, `NOT NULL`, and `CHECK` constraints that encode the domain rules.
+-- 3. Demonstrate invalid inserts and query the many-to-many relationship. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 049: Constraints, Modeling, and Normalization
+-- Your task: split repeating data into tables, then add constraints that make invalid state impossible. add the dependent table(s). add UNIQUE, CHECK, NOT NULL, and foreign-key constraints where justified.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: enforce invariants in a normalized schema.
 -- TODO: split repeating data into tables, then add constraints that make invalid state impossible.
-
-CREATE TABLE customer (
-    id BIGSERIAL PRIMARY KEY,
-    email TEXT NOT NULL
-);
-
 -- TODO: add the dependent table(s).
 -- TODO: add UNIQUE, CHECK, NOT NULL, and foreign-key constraints where justified.
+-- TODO: write the assigned SQL from the problem statement.

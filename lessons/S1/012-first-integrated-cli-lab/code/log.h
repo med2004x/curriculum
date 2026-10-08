@@ -1,6 +1,10 @@
-#ifndef LOG_H
-#define LOG_H
+/*
+ * STUDENT PROBLEM: define the interface required by the assignment.
+ * Assignment: Write the record type, enum, and prototypes in `log.h`.
+ */
+#ifndef DART_LOG_H
+#define DART_LOG_H
 
-void log_message(const char *message);
+/* TODO: declare the public interface. */
 
 #endif

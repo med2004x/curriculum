@@ -1,16 +1,13 @@
+/*
+ * STUDENT TASK: classify the years 1900, 2000, 2023, and 2024.
+ * Print `<year>: leap` or `<year>: common`, one result per line.
+ * A leap year is divisible by 4, except centuries unless divisible by 400.
+ * Predict each result before implementing the condition.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
-static int is_leap(int year) {
-    return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
-}
-
-int main(int argc, char **argv) {
-    if (argc != 2) {
-        fprintf(stderr, "usage: %s YEAR\n", argv[0]);
-        return 2;
-    }
-    int year = atoi(argv[1]);
-    printf("%d: %s\n", year, is_leap(year) ? "leap" : "common");
+int main(void) {
+    /* TODO: implement the problem described above. */
     return 0;
 }

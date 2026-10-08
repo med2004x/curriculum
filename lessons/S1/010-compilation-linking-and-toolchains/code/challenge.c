@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int add(int a, int b) {
-    /* CHALLENGE TODO: move the implementation to a separate translation unit. */
-    return a + b;
+    /* TODO: implement the assigned behavior. */
+    return 0;
 }
 
 int main(void) {

@@ -1,3 +1,4 @@
+/* WORKED EXAMPLE: A file-operation example for study; implement the task files listed in WORK.md. */
 git init                    create a repository in this directory
 git status                  what changed? what is staged?
 git add file.c              stage a file (or: git add -p to choose hunks)

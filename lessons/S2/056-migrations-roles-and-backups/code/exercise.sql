@@ -1,9 +1,14 @@
+-- STUDENT PROBLEM SET — Lesson 056.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Write an ordered migration pair adding one backward-compatible column and state its compatibility window.
+-- 2. Define a migration role and a restricted application role with explicit grants.
+-- 3. Select a logical backup procedure and describe an isolated restore plus verification checklist. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 056: Migrations, Roles, Privileges, and Backups
+-- Your task: write a reversible schema change, create a least-privilege role, ALTER TABLE ...
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: migration safety.
 -- TODO: write a reversible schema change, create a least-privilege role,
 -- and document the backup/restore verification steps.
-
-BEGIN;
-
 -- TODO: ALTER TABLE ...
-
-COMMIT;
+-- TODO: write the assigned SQL from the problem statement.

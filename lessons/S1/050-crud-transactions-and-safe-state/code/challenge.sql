@@ -2,11 +2,7 @@
 -- CHALLENGE TODO: make the debit and credit atomic.
 -- CHALLENGE TODO: reject insufficient funds.
 -- CHALLENGE TODO: prove the total balance is conserved.
-
-BEGIN;
-
 -- CHALLENGE TODO: SELECT ... FOR UPDATE the two accounts in a deterministic order.
 -- CHALLENGE TODO: perform the debit and credit.
 -- CHALLENGE TODO: verify row counts and constraints before COMMIT.
-
-COMMIT;
+-- TODO: write the assigned SQL from the problem statement.

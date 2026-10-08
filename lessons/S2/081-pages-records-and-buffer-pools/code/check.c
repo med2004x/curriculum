@@ -1,3 +1,4 @@
+/* TEST HARNESS: A supplied check; implement the assignment in exercise.c. */
 #include <assert.h>
 #include <stdint.h>
 #include <string.h>

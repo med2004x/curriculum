@@ -1,12 +1,17 @@
+-- STUDENT PROBLEM SET — Lesson 050.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Implement create/read/update/delete functions with parameterized SQL and explicit error handling.
+-- 2. Add a transaction that updates a task and inserts its event record atomically.
+-- 3. Add tests or a written state trace for success, not-found, constraint failure, rollback, and commit failure. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 050: CRUD, Transactions, and Safe State
+-- Your task: make the debit and credit atomic. reject insufficient funds. prove the total balance is conserved. SELECT ... FOR UPDATE the two accounts in a deterministic order.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: implement a safe transfer transaction.
 -- TODO: make the debit and credit atomic.
 -- TODO: reject insufficient funds.
 -- TODO: prove the total balance is conserved.
-
-BEGIN;
-
 -- TODO: SELECT ... FOR UPDATE the two accounts in a deterministic order.
 -- TODO: perform the debit and credit.
 -- TODO: verify row counts and constraints before COMMIT.
-
-COMMIT;
+-- TODO: write the assigned SQL from the problem statement.

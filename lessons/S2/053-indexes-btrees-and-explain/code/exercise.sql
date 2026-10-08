@@ -1,12 +1,14 @@
+-- STUDENT PROBLEM SET — Lesson 053.
+-- Read the lecture, then solve these tasks before opening any worked examples:
+-- 1. Capture a baseline plan for the project/task query and record the relevant table/index context.
+-- 2. Add a composite B-tree index matching the filter and ordering pattern; capture the new plan.
+-- 3. Compare selective and nonselective variants and explain the planner's cost trade-off. Do not open the reference implementation until your own attempt has been saved.
+-- Run the problem-set command in ../WORK.md and leave the supplied checks unchanged.
+-- PROBLEM STARTER — Lesson 053: Indexes, B-Trees, and EXPLAIN
+-- Your task: identify the selective predicate, create the smallest useful index, and compare plans. CREATE INDEX ... run EXPLAIN again and explain the change.
+-- Read ../README.md for the concept; follow ../WORK.md for the problem and checks. Keep tests independent of examples.
 -- EXERCISE STARTER: index + EXPLAIN.
 -- TODO: identify the selective predicate, create the smallest useful index, and compare plans.
-
-EXPLAIN (ANALYZE, BUFFERS)
-SELECT id, customer_id, total_cents
-FROM orders
-WHERE customer_id = 42
-ORDER BY id DESC
-LIMIT 20;
-
 -- TODO: CREATE INDEX ...
 -- TODO: run EXPLAIN again and explain the change.
+-- TODO: write the assigned SQL from the problem statement.

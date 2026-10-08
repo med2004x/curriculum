@@ -1,3 +1,4 @@
+/* WORKED EXAMPLE: A complete query example; write your assignment in exercise.sql. */
 -- Wrap exploratory mutations in BEGIN/ROLLBACK.
 
 -- 1. Preview and rename one task. Use RETURNING.

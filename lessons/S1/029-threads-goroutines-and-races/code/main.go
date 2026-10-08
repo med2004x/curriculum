@@ -1,3 +1,4 @@
+/* WORKED EXAMPLE: A runnable race demonstration; implement the synchronized task in exercise.go. */
 package main
 
 import (

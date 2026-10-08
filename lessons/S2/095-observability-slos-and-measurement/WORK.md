@@ -1,165 +1,35 @@
-# Lesson 095 Work Packet
+# Lesson 095 — Problem Set
 
-**Lecture:** [`README.md`](README.md)  
-**Module:** 10. Reliability, Performance, Production, and Graduation  
-**Primary:** Production/Performance/Math  
-**Session target:** 2–4 hours  
+**Topic:** Observability, SLOs, and Measurement.
+**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
 
-This file is the practical half of the lesson. Do the lecture first. Do not treat the worked examples in the lecture as evidence that you can reproduce the skill from memory.
+## Problems
 
-## 1. Session sequence
+1. Build the smallest useful version: Implement structured logging for a real endpoint (JSON-formatted, with at minimum a request ID, timestamp, and severity level on every log line), and generate a request ID at the start of each request, propagating it through every subsequent log line for that request (via context, in Go's idiomatic style, or an equivalent mechanism in your language).
 
-Use this exact order: **retrieve → guided practice → independent exercises → problem solving → coding challenge → review → evidence**. Skip a phase only when you have already demonstrated mastery of the lesson gate.
+2. Extend it with one explicit boundary case: Implement basic metrics: a counter for total requests, a counter for errors, and a histogram for request latency (using a metrics library like Prometheus's client library, or a simple hand-rolled equivalent for this exercise).
 
-Suggested pacing: 10–15 min retrieval, 25–45 min guided practice, 45–75 min exercises, 30–60 min problem solving, 60–120 min challenge, 15 min review.
+3. Rebuild the same behavior with one changed constraint: Expose them via a `/metrics` endpoint and confirm you can compute p50/p95/p99 latency from your histogram data.
 
-## 2. Retrieve before learning
+Do not open the reference implementation until your own attempt has been saved.
 
-1. Which events belong in the availability denominator?
-2. How does event volume affect the error budget?
-3. Why can p99 rise while the mean remains stable?
-4. What information is lost through trace sampling?
-5. Why are request IDs poor metric labels?
-6. Which metric type represents in-flight requests?
+Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
-Do not open the lecture until the predictions are written. Retrieval is not warm-up decoration. It is part of the lesson.
+## Run and check
 
-## 3. Guided practice
+```powershell
+Set-Location lessons/S2/095-observability-slos-and-measurement/code
+go run exercise.go
+```
 
-### Practice A — Predict
-1. Predict the result of the smallest lesson-specific case.
-2. Predict one boundary case and state exactly which observation would confirm it.
-3. Predict the first failure signal if one assumption is broken.
-4. Predict which state, file, process, query, or interface is responsible for the observable result.
-5. Predict what changes when one constraint is changed and all other inputs stay fixed.
-6. Predict the verification command before you run it.
-7. Predict one debugging step that would reduce the problem to a smaller case.
-8. Write the prediction down before executing any of the cases.
+Add `exercise_test.go` with normal, boundary, and failure cases; a successful build alone is not a passing assignment.
 
-Run the smallest case first. Record prediction and observation side by side.
-
-### Practice B — Modify one variable
-Take the smallest runnable example from the lecture and change exactly one thing. Do not add new concepts yet. Predict the change, run it, and explain the delta in one paragraph.
-
-### Practice C — Guided instrumentation
-Instrument one internal state: an index, pointer, counter, transaction state, request ID, queue length, timestamp, or equivalent. The instrumentation must let you answer “what changed?” rather than merely “did it work?”
-
-## 4. Independent exercises
-
-### Exercise 1 — Recall and prediction
-Without running anything, explain the main mechanism in **Track requests with correlated logs, metrics, and traces.**. Predict the result for one ordinary input and one boundary input. Record both predictions before checking them.
-
-### Exercise 2 — Guided-to-independent implementation
-Rebuild the smallest useful version of the lesson's main mechanism from a blank file. Your implementation must satisfy **Define an event-based SLI, an SLO target, and its error budget.**. Start with a written data/control-flow sketch, then code, then verify.
-
-### Exercise 3 — Debug and repair
-Take your implementation and introduce one realistic defect: wrong boundary, wrong state update, missing cleanup, incorrect error branch, or invalid assumption. Reproduce the failure, classify it, fix it, and add a regression test or evidence step.
-
-### Exercise 4 — Transfer
-Change one important constraint from the lesson. Examples: larger input, partial failure, concurrent callers, invalid data, persistence, or a different representation. Explain which invariant survives, which one changes, and why.
-
-### Exercise 5 — Explanation
-Write a 150–250 word technical explanation of **Use telemetry to locate latency and distinguish observation from inference.** as if another student must implement it from your explanation. No screenshots; the explanation must stand on its own.
-
-## 5. Problem-solving lab
-
-You are given a small specification with two valid states and one invalid state. Decompose it into inputs, invariant, transition, and verification before writing code.
-
-### Problem-solving protocol
-
-1. Restate the problem and constraints.
-2. Produce a small concrete example.
-3. State the invariant or contract.
-4. Write the simplest baseline solution or model.
-5. Identify the bottleneck, failure, or repeated work.
-6. Improve it only after you can explain the baseline.
-7. Verify against a case designed to break the naive solution.
-
-## 6. Coding challenge
+## Stretch problem
 
 ### Observability + SLO
 
 Instrument a service with request rate, errors, latency quantiles, and a defined SLO. Trigger a failure and use the evidence to explain what happened.
 
-### Acceptance criteria
+## Turn in
 
-- The main path works on normal input.
-- At least two boundary or invalid cases are tested.
-- One failure mode is deliberately reproduced and then fixed.
-- The implementation can be explained from a blank page in terms of state and invariants.
-- Verification is reproducible from commands recorded in your evidence file.
-
-## 8. Debugging and failure lab
-
-Release one trace ID during a dependency call and observe the broken trace; then add a high-cardinality request-ID metric label and inspect series growth. Restore propagation and remove the label.
-
-Save the baseline, command, observed failure, and repaired result. Confirm the original success case still passes after the repair.
-
-Rule: never fix a failure by changing multiple unrelated things at once. The objective is diagnosis, not ritual.
-
-## 9. Transfer and design reasoning
-
-Change exactly one constraint in the main case for # 095 — Observability, SLOs, and Measurement: change the input shape, data size, interface, or operating condition without changing the underlying objective. Solve it from blank, then verify the new behavior with a terminal command or a reproducible calculation.
-
-Your transfer answer is complete only when the changed constraint is explicit and the evidence distinguishes the new case from the original case.
-
-Then answer: **What would make your current solution wrong even though all visible examples still pass?**
-
-## 10. Academic drill
-
-1. **Model:** State the system model and assumptions before solving.
-2. **Trace:** Work a small failure or state-transition example by hand.
-3. **Trade-off:** Compare two designs and state the condition under which each wins.
-4. **Evidence:** Identify the measurement, test, or trace that would distinguish the designs in practice.
-
-This lesson is also an academic integration point. Do the written drill before the engineering implementation so the two reinforce each other rather than becoming two unrelated memorisation exercises.
-
-## 11. Self-test
-
-- [ ] Which events belong in the availability denominator?
-- [ ] How does event volume affect the error budget?
-- [ ] Why can p99 rise while the mean remains stable?
-- [ ] What information is lost through trace sampling?
-- [ ] Why are request IDs poor metric labels?
-- [ ] Which metric type represents in-flight requests?
-
-Score yourself only after the attempt: **0 = cannot answer, 1 = answer with notes, 2 = answer from memory, 3 = answer and justify a new variation.**
-
-## 12. Evidence and grading
-
-Create `EVIDENCE.md` in this lesson directory. Record:
-
-- the exact commands or test commands used;
-- one before/after prediction;
-- one failure reproduced deliberately and its diagnosis;
-- the result of the coding challenge;
-- one transfer variation;
-- your self-test score.
-
-### Gate rubric
-
-| Dimension | Pass condition |
-|---|---|
-| Knowledge | Explain the core model without notes. |
-| Procedure | Produce a working implementation or derivation from blank. |
-| Debugging | Reproduce, classify, and repair one realistic failure. |
-| Transfer | Solve a changed constraint without being handed the algorithm. |
-| Evidence | Another person can reproduce the verification from your notes. |
-
-Suggested pass threshold: all five dimensions pass. If one fails, review that dimension before moving to the next lesson.
-
-## 13. Mastery gate
-
-Use the lecture's mastery gate in [`README.md`](README.md) as the primary criterion. This work packet adds the stronger requirement that you can satisfy the gate **after** completing independent work, not by recognising the lecture examples.
-
-For integrated assessment lessons, the gate is summative: treat the challenge as an exam/project submission and do not consult previous solutions while working.
-
-## 14. Spaced review
-
-- **Next day:** answer the self-test from memory and redo one exercise without looking.
-- **One week:** solve the transfer problem again under a changed constraint.
-- **Later module review:** revisit this lesson when the concept reappears in a later module and compare the old and new evidence.
-
-## 15. External practice reference
-
-- Use the lesson's assigned material and primary technical documentation when a precise semantic detail needs verification. The repository challenge remains the assessment artifact.
+In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.

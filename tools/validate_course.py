@@ -13,21 +13,7 @@ lesson_dirs = sorted((p for semester in ('S1', 'S2') for p in (LESSONS / semeste
 if len(lesson_dirs) != 100:
     errors.append(f'expected 100 lesson directories, found {len(lesson_dirs)}')
 
-required_work = [
-    '## 1. Session sequence',
-    '## 2. Retrieve before learning',
-    '## 3. Guided practice',
-    '## 4. Independent exercises',
-    '## 5. Problem-solving lab',
-    '## 6. Coding challenge',
-    '## 8. Debugging and failure lab',
-    '## 9. Transfer and design reasoning',
-    '## 10. Academic drill',
-    '## 11. Self-test',
-    '## 12. Evidence and grading',
-    '## 13. Mastery gate',
-    '## 14. Spaced review',
-]
+required_problem_set = ['## Problems', '## Run and check', '## Turn in']
 
 for i, d in enumerate(lesson_dirs, 1):
     if not d.name.startswith(f'{i:03d}-'):
@@ -45,17 +31,18 @@ for i, d in enumerate(lesson_dirs, 1):
     work_headings = (
         ["## Before coding", "## Exercises", "## Record and check", "## Done when"]
         if d.name == '001-programs-machines-and-the-terminal'
-        else required_work
+        else required_problem_set
     )
     for h in work_headings:
         if h not in txt: errors.append(f'{d.name}: missing {h}')
-    if txt.count('### Exercise ') < 5:
-        errors.append(f'{d.name}: fewer than 5 independent exercises')
-    if '### ' not in txt:
-        errors.append(f'{d.name}: no activity subsections')
-    for marker in ['TODO', 'TBD', 'FIXME', 'FILL IN HERE', 'INSERT DATA HERE']:
+    if d.name == '001-programs-machines-and-the-terminal':
+        if txt.count('### Exercise ') < 5:
+            errors.append(f'{d.name}: fewer than 5 independent exercises')
+    elif not re.search(r'^\s*\d+\.\s+|^### Task\s+\d+', txt, re.M):
+        errors.append(f'{d.name}: problem set has no numbered tasks')
+    for marker in ['TBD', 'FIXME', 'FILL IN HERE', 'INSERT DATA HERE']:
         if marker.lower() in txt.lower(): errors.append(f'{d.name}: unresolved placeholder {marker}')
-    if 'practice/' in txt or 'reference/' in txt or 'exams/' in txt or 'training/' in txt or 'exam-work/' in txt:
+    if 'practice/' in txt or 'exams/' in txt or 'training/' in txt or 'exam-work/' in txt:
         errors.append(f'{d.name}: stale split-tree reference in WORK.md')
     # Catch obvious template substitution failures that headings-only checks miss.
     if re.search(r'\bsmallest\s+#\s*\d+\s+[—-]\s+', txt, re.I):

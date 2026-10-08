@@ -1,3 +1,4 @@
+/* FIXTURE: Input data for the process scheduling lab. */
 EXPLAIN (ANALYZE, BUFFERS)
 SELECT id, title, created_at
 FROM app.tasks

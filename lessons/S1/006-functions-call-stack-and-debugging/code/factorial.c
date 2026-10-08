@@ -1,16 +1,10 @@
-Lesson 006 evidence
-===================
+/*
+ * STUDENT PROBLEM — implement this file; it contains no worked solution.
+ * Assignment: `factorial.c`: implement recursive factorial and verify 5 and 12.
+ */
+#include <stdio.h>
 
-fact(5) = 120
-fact(12) = 479001600
-
-swap_bad(1, 2):
-caller remains 1 2
-
-Stack:
-3-level recursion showed 0x30 = 48 byte decrease per frame on gcc 13 x86-64
-exact addresses vary
-
-Infinite recursion:
-Segmentation fault
-exit status = 139; default stack limit = 8192 KB
+int main(void) {
+    /* TODO: implement the problem described above. */
+    return 0;
+}

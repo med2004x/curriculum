@@ -1,3 +1,8 @@
+/*
+ * STUDENT TASK: given one integer in argv[1], print its sign and parity.
+ * Use labels `negative`, `zero`, `positive` and `odd`, `even` separated by
+ * one space. Remember that C's remainder for negative values may be negative.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,9 +12,6 @@ int main(int argc, char **argv) {
         return 2;
     }
     int n = atoi(argv[1]);
-    if (n < 0) puts("negative odd/even:");
-    else if (n == 0) puts("zero even");
-    else puts("positive odd/even:");
-    printf("%s %s\n", n < 0 ? "negative" : n > 0 ? "positive" : "zero", n % 2 == 0 ? "even" : "odd");
+    /* TODO: classify n and print one exact label pair. */
     return 0;
 }

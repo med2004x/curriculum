@@ -1,3 +1,4 @@
+/* CHECK SCRIPT: A supplied verification query; keep it unchanged while doing the IPC task. */
 SELECT current_user, current_database();
 
 SELECT id, title
