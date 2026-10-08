@@ -16,25 +16,25 @@ Write your predictions in `EVIDENCE.md` before running anything:
 
 ## Exercises
 
-### Exercise 1 - Run the hello program
+### Exercise 1 - Build the first program
 
-Compile `code/hello.c`, run it, and record its output and exit status. Expected output: `Hello, world!`.
+Complete `code/task_01.c`: make it print exactly `hello`, then a newline, and exit with status 0. Predict the output first; compile it, run it, and record the result.
 
-### Exercise 2 - Run the greeting program
+### Exercise 2 - Match a string contract
 
-Compile `code/greet.c` and run it. Expected output: `Hello, Ada!`.
+Complete `code/hello.c` so it prints exactly `Hello, world!` followed by a newline.
 
-### Exercise 3 - Run the report and arithmetic programs
+### Exercise 3 - Use a variable in formatted output
 
-Compile and run `code/report.c` and `code/arith.c`. Expected outputs are two lines (`Name: Ada`, then `Score: 42`) and `66` respectively.
+Complete `code/greet.c`: store a name in a variable and print `Hello, <name>!` using a format specifier.
 
-### Exercise 4 - Change the student program
+### Exercise 4 - Report two values
 
-Edit `code/exercise.c` so it prints exactly `Hello, DART!` followed by a newline. Predict the output before running it.
+Complete `code/report.c`: store a name and integer score, and print them on separate labeled lines. Then complete `code/arith.c` to compute and print `(17 + 5) * 3` as an integer.
 
-### Exercise 5 - Check and inspect an exit status
+### Exercise 5 - Meet an exact output contract
 
-From the repository root, run `python tools/check_lesson_001.py`. It should fail before Exercise 4 and pass after it. Then temporarily change the program's `return 0;` to `return 7;`, run it, and inspect the exit status. Restore `return 0;` and make the check pass again.
+Complete `code/exercise.c` so it prints exactly `Hello, DART!` followed by a newline. From the repository root, run `python tools/check_lesson_001.py`. It checks all six programs and should fail until every task is complete. Then temporarily change the final program's `return 0;` to `return 7;`, run it, and inspect the exit status. Restore `return 0;` and make the full check pass.
 
 ## Commands
 
@@ -42,18 +42,18 @@ In PowerShell, from the repository root:
 
 ```powershell
 Set-Location ./lessons/S1/001-programs-machines-and-the-terminal/code
-gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello.exe
-./hello.exe
+gcc -std=c17 -Wall -Wextra -Wpedantic task_01.c -o task_01.exe
+./task_01.exe
 $LASTEXITCODE
 ```
 
-Repeat with `greet.c`, `report.c`, and `arith.c`, changing the executable name to match. Return to the repository root with `Set-Location ../../..`.
+Build each task file separately; each has its own `main` function. For example, run `gcc -std=c17 -Wall -Wextra -Wpedantic task_01.c -o task_01.exe`, then `./task_01.exe`. Repeat for the file you are working on, using its name for the executable. Return to the repository root with `Set-Location ../../..`.
 
 This Windows environment needs a complete C toolchain first. A compiler executable without the C standard headers is not enough. Follow [`SETUP.md`](../../../SETUP.md).
 
 ## Record and check
 
-Fill in [`EVIDENCE.md`](EVIDENCE.md) as you go. Try the retrieval answers before checking [`ANSWERS.md`](ANSWERS.md).
+Fill in [`EVIDENCE.md`](EVIDENCE.md) as you go. Try the retrieval answers from memory, then use the lecture and compiler output to check your reasoning.
 
 ## Done when
 

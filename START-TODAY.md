@@ -6,8 +6,8 @@ Choose one route. You do not need to read the whole repository first.
 
 1. Read the [Lesson 001 lecture](lessons/S1/001-programs-machines-and-the-terminal/README.md).
 2. Follow the short [Lesson 001 work card](lessons/S1/001-programs-machines-and-the-terminal/WORK.md).
-3. Edit [exercise.c](lessons/S1/001-programs-machines-and-the-terminal/code/exercise.c) in that folder's `code/` directory.
-4. Run `python tools/check_lesson_001.py` from the repository root. It should fail on the starter and pass after the exercise prints exactly `Hello, DART!`.
+3. Complete the six task files in that folder's `code/` directory, following the order in `WORK.md`. The explanations and TODO prompts are inside each source file.
+4. Run `python tools/check_lesson_001.py` from the repository root. It checks the output and exit status of all six programs and passes only when every task meets its contract.
 5. Write your result in [Lesson 001 evidence](lessons/S1/001-programs-machines-and-the-terminal/EVIDENCE.md), then open Lesson 002 in the [lesson index](LESSON-INDEX.md).
 
 The lecture's Section 6 suggests creating a separate `lesson001/` directory. For this repository, use the existing `code/` directory as the work folder.
@@ -23,7 +23,7 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 $LASTEXITCODE
 ```
 
-The starter prints `hello, Student` and exits with 0. To run its pass/fail check, return to the repository root (`Set-Location ../../..`) and run `python tools/check_lesson_001.py`.
+The starter files intentionally do not yet produce the required output. Complete the six tasks, then return to the repository root (`Set-Location ../../..`) and run `python tools/check_lesson_001.py`.
 
 ## Semester courses
 

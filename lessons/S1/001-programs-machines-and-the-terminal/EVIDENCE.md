@@ -12,12 +12,12 @@ Fill this in as you work. Make predictions before compiling.
 
 | Program | Command | Output | Exit status |
 |---|---|---|---:|
+| task_01 | | | |
 | hello | | | |
 | greet | | | |
 | report | | | |
 | arith | | | |
-| exercise before edit | | | |
-| exercise after edit | | | |
+| exercise | | | |
 
 ## Check and failure
 
