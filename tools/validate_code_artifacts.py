@@ -20,7 +20,6 @@ for lesson in lesson_dirs:
     for required in ("README.md", "WORK.md", "EVIDENCE.md", "code"):
         if not (lesson / required).exists():
             failures.append(f"{lesson.name}: missing {required}")
-
     text = "\n".join((lesson / name).read_text(errors="replace") for name in ("README.md", "WORK.md"))
     for filename in ("README.md", "WORK.md", "EVIDENCE.md"):
         doc = lesson / filename

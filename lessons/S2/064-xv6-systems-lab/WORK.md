@@ -166,3 +166,7 @@ For integrated assessment lessons, the gate is summative: treat the challenge as
 ## 15. External practice reference
 
 - Use the lesson's assigned material and primary technical documentation when a precise semantic detail needs verification. The repository challenge remains the assessment artifact.
+
+## Upstream lab: MIT xv6-RISC-V
+
+The small local C starter is a prompt, not an xv6 implementation. Use the real [xv6 source](https://github.com/mit-pdos/xv6-riscv) and the [matching MIT lab handout](https://pdos.csail.mit.edu/6.S081/2026/labs/syscall.html). Clone the course lab repository (`git://g.csail.mit.edu/xv6-labs-2026`), check out the `syscall` branch as directed, and run `make grade`. Record the release/commit, selected lab, commands, results, and the kernel invariant in `EVIDENCE.md`.

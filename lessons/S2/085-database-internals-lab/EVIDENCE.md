@@ -6,7 +6,7 @@ Lesson: Database Internals Lab
 Record the three pre-lecture predictions from `WORK.md`.
 
 ## Build
-Record the BusTub semester/commit, selected project, exact build and supplied test commands, and the test output. The local SQL/C files are prompts; use the upstream project described in [`code/README.md`](code/README.md).
+Record the BusTub semester/commit, selected project, exact build and supplied test commands, and the test output. The local SQL/C files are prompts; use the upstream project described in [the upstream lab instructions in `WORK.md`](WORK.md).
 
 ## Failure reproduction
 Record one deliberately reproduced failure, the diagnosis, and the repair.

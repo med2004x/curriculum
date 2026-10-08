@@ -166,3 +166,7 @@ For integrated assessment lessons, the gate is summative: treat the challenge as
 ## 15. External practice reference
 
 - Use the lesson's assigned material and primary technical documentation when a precise semantic detail needs verification. The repository challenge remains the assessment artifact.
+
+## Upstream lab: MIT 6.5840 Raft
+
+Use the official [MIT 6.5840 lab source](git://g.csail.mit.edu/6.5840-golabs-2026) and [course guide](https://pdos.csail.mit.edu/6.5840/), with the handout and tests from the same release. In the supplied 2026 checkout, run `make -C src raft1`; its Makefile runs the race-enabled `raft1` Go tests. Follow the selected release's course page and Makefile, and record the commit, command, and results in `EVIDENCE.md`. The local Go file is a state-transition exercise, not a substitute for the replicated state machine lab.

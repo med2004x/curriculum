@@ -6,7 +6,7 @@ Lesson: Systems Lab: xv6 and Kernel Boundaries
 Record the three pre-lecture predictions from `WORK.md`.
 
 ## Build
-Record the xv6 upstream release/commit, selected lab, exact build and test commands, and the test output. The local C file is only a prompt; run the real lab tests described in [`code/README.md`](code/README.md).
+Record the xv6 upstream release/commit, selected lab, exact build and test commands, and the test output. The local C file is only a prompt; run the real lab tests described in [the upstream lab instructions in `WORK.md`](WORK.md).
 
 ## Failure reproduction
 Record one deliberately reproduced failure, the diagnosis, and the repair.

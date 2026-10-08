@@ -165,3 +165,7 @@ For integrated assessment lessons, the gate is summative: treat the challenge as
 ## 15. External practice reference
 
 - Use the lesson's assigned material and primary technical documentation when a precise semantic detail needs verification. The repository challenge remains the assessment artifact.
+
+## Upstream lab: CMU BusTub
+
+Use the official [BusTub project](https://github.com/cmu-db/bustub) and its [matching semester project guide](https://15445.courses.cs.cmu.edu/). APIs and tests vary by release. Follow that handout's CMake workflow, then run `make check-tests` from the build directory (or the target prescribed for that release). Record the semester/commit, target, output, and one invariant in `EVIDENCE.md`. Keep solutions in a private working copy and follow the course FAQ and academic-integrity rules. The local C/SQL starters are prompts, not a database engine or replacement harness.

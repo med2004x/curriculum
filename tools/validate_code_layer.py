@@ -14,8 +14,6 @@ for lesson in lessons:
         issues.append(f"{lesson.name}: missing code/")
         continue
     files = [p for p in code.rglob("*") if p.is_file()]
-    if not (code / "README.md").exists():
-        issues.append(f"{lesson.name}: missing code/README.md")
     student = [p for p in files if p.name in {"exercise.c", "exercise.go", "exercise.rs", "exercise.sql", "challenge.c", "challenge.go", "challenge.rs", "challenge.sql"}]
     for p in student:
         s = p.read_text(errors="ignore")
