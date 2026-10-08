@@ -3,6 +3,8 @@
 Audit date: 2026-10-08  
 Scope: the current checkout at baseline commit `1d62764`. This is a point-in-time audit, not a claim about the untouched original ZIP. The repository had been initialized but every project file was untracked, so the existing checkout was recorded in that baseline commit before this staged work. No lecture file (`lessons/*/README.md`) was edited for this audit.
 
+Follow-up structure change: after this snapshot, the user asked to remove the separate top-level `LIG/` directory. Current S1/S2 course exercises are now inside `lessons/S1/` and `lessons/S2/`; this audit's old paths describe the prior snapshot only.
+
 ## Findings at a glance
 
 Several defects in the supplied audit are already fixed in the current checkout; several remain, and the current automated checks expose additional problems. In particular, skipped Go tests and comment-only duplicate challenges are no longer present, and evidence paths now resolve. However, 12 Go test functions across 7 test files are not a functioning core-path autograder: 4 lesson packages fail to compile because multiple student/reference files redeclare the same symbols, while tests in 3 packages pass on the current starter (one is a worked example). The Go tests therefore do not meet the required starter-fails/correct-solution-passes standard.

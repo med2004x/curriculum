@@ -1,3 +1,7 @@
-gcc -Wall -Wextra -std=c11 hello.c -o hello
-./hello
-echo $?
+#include <stdio.h>
+
+int main(void) {
+    puts("Name: Ada");
+    puts("Score: 42");
+    return 0;
+}

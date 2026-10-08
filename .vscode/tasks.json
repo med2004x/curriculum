@@ -2,27 +2,27 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Course: validate structure",
+      "label": "Start: check Lesson 001",
       "type": "shell",
-      "command": "python tools/validate_course.py",
+      "command": "python tools/check_lesson_001.py",
       "problemMatcher": []
     },
     {
-      "label": "Course: validate strict",
+      "label": "Exercises: S1 checks",
       "type": "shell",
-      "command": "python tools/validate_course.py --strict",
+      "command": "python tools/run_semester_tests.py s1",
       "problemMatcher": []
     },
     {
-      "label": "Course: math sanity checks",
+      "label": "Exercises: S2 checks",
       "type": "shell",
-      "command": "python tools/math_check.py",
+      "command": "python tools/run_semester_tests.py s2",
       "problemMatcher": []
     },
     {
-      "label": "Course: Go tests",
+      "label": "Repository: validate structure",
       "type": "shell",
-      "command": "python tools/go_test_all.py",
+      "command": "python tools/validate_all.py",
       "problemMatcher": []
     }
   ]

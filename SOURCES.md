@@ -33,8 +33,8 @@ These primary course repositories are the assessment references for the DART les
 DART's lessons 064, 085, and 090 now direct learners to these upstream assignments and record the selected upstream commit and test output in `EVIDENCE.md`. The DART structural validators do not claim to run these external test suites.
 
 
-## LIG subject packs
+## Semester course exercises
 
-The semester folder organization follows the subject names and mappings preserved in the supplied [`LIG-YEAR1-CHECKLIST.md`](LIG-YEAR1-CHECKLIST.md). The current official FSEGS maquette and selected elective titles were not supplied with this repository; check instructor materials before treating these packs as an authoritative exam specification.
+S1 and S2 course exercises are stored in `lessons/S1/` and `lessons/S2/`. Teaching notes and exercise prompts are comments at the top of each exercise file. The current official FSEGS maquette and selected elective titles were not supplied with this repository; confirm the subject list and exam scope with your instructor.
 
 The `dart-upstreams` directory is a local audit/reference checkout outside this repository. It is not included in Git. The lesson instructions identify the upstream repository and ask learners to record the exact commit they use.

@@ -112,7 +112,7 @@ Then answer: **What would make your current solution wrong even though all visib
 3. **Exam variation:** Change one parameter and recompute the result without running code.
 4. **Engineering bridge:** Identify the exact observation in the terminal that would confirm your written result.
 
-LIG support: [OS1](../../LIG/S1/OS1.md). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
+LIG support: [OS1](../S1/s1_os1.py). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
 
 ## 11. Self-test
 

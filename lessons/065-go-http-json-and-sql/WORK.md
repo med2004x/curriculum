@@ -116,7 +116,7 @@ Then answer: **What would make your current solution wrong even though all visib
 3. **Why:** Explain the invariant or security property that makes that response correct.
 4. **Implementation bridge:** Name the test or runtime observation that would prove the rule is enforced.
 
-LIG support: [BUSINESS-COMMUNICATION](../../LIG/S2/BUSINESS-COMMUNICATION.md), [IS-NETWORKS](../../LIG/S2/IS-NETWORKS.md). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
+LIG support: [BUSINESS-COMMUNICATION](../S2/s1_business_communication.py), [IS-NETWORKS](../S2/s2_is_networks.py). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
 
 ## 11. Self-test
 

@@ -116,7 +116,7 @@ Then answer: **What would make your current solution wrong even though all visib
 3. **Complexity:** Give worst-case time and extra-space bounds and justify them.
 4. **Transfer:** Change one constraint and explain which part of the algorithm must change.
 
-LIG support: [ALGEBRA](../../LIG/S2/ALGEBRA.md). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
+LIG support: [ALGEBRA](../S2/s2_algebra.py). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
 
 ## 11. Self-test
 

@@ -1,18 +1,27 @@
 # Lesson 001 Evidence
 
-Lesson: Programs, Machines, and the Terminal
+Fill this in as you work. Make predictions before compiling.
 
-## Retrieval
-Record the three pre-lecture predictions from `WORK.md`.
+## Predictions
 
-## Build
-Record the exact commands used to build and run `code/exercise.c`.
+- UTF-8 byte count for the four characters in Exercise 1:
+- `(17 + 5) * 3`:
+- Meaning of exit status 0:
 
-## Failure reproduction
-Record one deliberately reproduced failure, the diagnosis, and the repair.
+## Program runs
 
-## Transfer
-Record the changed constraint and how the invariant was preserved.
+| Program | Command | Output | Exit status |
+|---|---|---|---:|
+| hello | | | |
+| greet | | | |
+| report | | | |
+| arith | | | |
+| exercise before edit | | | |
+| exercise after edit | | | |
 
-## Gate
-Record your five gate decisions from `WORK.md` before moving on.
+## Check and failure
+
+- Check before edit:
+- Check after edit:
+- Temporary exit-status change and observed result:
+- What I restored:

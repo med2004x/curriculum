@@ -1,3 +1,6 @@
-gcc -Wall -Wextra -std=c11 hello.c -o hello
-./hello
-echo $?
+#include <stdio.h>
+
+int main(void) {
+    printf("%d\n", (17 + 5) * 3);
+    return 0;
+}

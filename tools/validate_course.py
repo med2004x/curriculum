@@ -39,7 +39,12 @@ for i, d in enumerate(lesson_dirs, 1):
         errors.append(f'{d.name}: missing WORK.md')
         continue
     txt = work.read_text(encoding='utf-8', errors='replace')
-    for h in required_work:
+    work_headings = (
+        ["## Before coding", "## Exercises", "## Record and check", "## Done when"]
+        if d.name == '001-programs-machines-and-the-terminal'
+        else required_work
+    )
+    for h in work_headings:
         if h not in txt: errors.append(f'{d.name}: missing {h}')
     if txt.count('### Exercise ') < 5:
         errors.append(f'{d.name}: fewer than 5 independent exercises')
@@ -66,16 +71,16 @@ for i, d in enumerate(lesson_dirs, 1):
             if not (d / ref).exists():
                 errors.append(f'{d.name}: dead evidence path: {ref}')
 
-allowed_dirs = {'.git', '.vscode', 'lessons', 'tools', 'LIG'}
+allowed_dirs = {'.git', '.vscode', 'lessons', 'tools'}
 extras = [p.name for p in ROOT.iterdir() if p.is_dir() and p.name not in allowed_dirs]
 if extras:
     errors.append('unexpected top-level content directories: ' + ', '.join(sorted(extras)))
 
 # Root curriculum docs must exist.
-for name in ['README.md', 'CURRICULUM.md', 'LESSON-INDEX.md', 'STUDY-LOG.md', 'C-QUICK-REFERENCE.md', 'GO-QUICK-REFERENCE.md', 'ACADEMIC.md', 'SOURCES.md']:
+for name in ['README.md', 'START-TODAY.md', 'SETUP.md', 'CURRICULUM.md', 'LESSON-INDEX.md', 'STUDY-LOG.md', 'C-QUICK-REFERENCE.md', 'GO-QUICK-REFERENCE.md', 'SOURCES.md']:
     if not (ROOT/name).exists(): errors.append(f'missing root file: {name}')
-for name in ['LIG/README.md', 'LIG/S1/README.md', 'LIG/S2/README.md', 'LIG/Shared/CHOICE-SLOTS.md']:
-    if not (ROOT/name).exists(): errors.append(f'missing semester track file: {name}')
+for name in ['lessons/S1', 'lessons/S2']:
+    if not (ROOT/name).is_dir(): errors.append(f'missing semester exercise folder: {name}')
 
 # The original lecture READMEs must retain their structure and minimum depth.
 for d in lesson_dirs:

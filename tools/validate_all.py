@@ -11,7 +11,7 @@ CHECKS = [
     "validate_course.py",
     "validate_code_layer.py",
     "validate_code_artifacts.py",
-    "validate_lig_curriculum.py",
+    "validate_semester_courses.py",
 ]
 
 

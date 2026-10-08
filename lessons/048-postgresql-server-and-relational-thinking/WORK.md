@@ -116,7 +116,7 @@ Then answer: **What would make your current solution wrong even though all visib
 3. **Counterexample:** Construct one invalid or surprising case.
 4. **Verification:** State the SQL command, trace, or test that would falsify your answer.
 
-LIG support: [DB-MULTIMEDIA](../../LIG/S1/DB-MULTIMEDIA.md). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
+LIG support: [DB-MULTIMEDIA](../S1/s1_db_multimedia.py). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
 
 ## 11. Self-test
 

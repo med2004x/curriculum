@@ -116,7 +116,7 @@ Then answer: **What would make your current solution wrong even though all visib
 3. **Counterexample:** Construct one invalid or surprising case.
 4. **Verification:** State the SQL command, trace, or test that would falsify your answer.
 
-LIG support: [AUTOMATA](../../LIG/S2/AUTOMATA.md), [OS2](../../LIG/S2/OS2.md). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
+LIG support: [AUTOMATA](../S2/s2_automata.py), [OS2](../S2/s2_os2.py). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
 
 ## 11. Self-test
 

@@ -119,7 +119,7 @@ Then answer: **What would make your current solution wrong even though all visib
 3. **Trade-off:** Compare two designs and state the condition under which each wins.
 4. **Evidence:** Identify the measurement, test, or trace that would distinguish the designs in practice.
 
-LIG support: [S2-MASTER](../../LIG/S2/S2-MASTER.md). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
+LIG support: [S2-MASTER](../S2/mastery_s2.py). Complete the linked subject-pack drill before the engineering implementation; keep the university derivation and code evidence as separate artifacts.
 
 ## 11. Self-test
 

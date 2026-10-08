@@ -6,11 +6,11 @@ This repository supports two LIG semester tracks and one longer engineering sequ
 
 | Route | Entry point | Scope |
 |---|---|---|
-| LIG S1 | [S1 index](LIG/S1/README.md) | First-semester subject packs and their evidence requirements |
-| LIG S2 | [S2 index](LIG/S2/README.md) | Second-semester subject packs and their evidence requirements |
+| LIG S1 | [S1 exercises](lessons/S1/) | First-semester subject packs and their evidence requirements |
+| LIG S2 | [S2 exercises](lessons/S2/) | Second-semester subject packs and their evidence requirements |
 | Systems/backend engineering | [Lesson index](LESSON-INDEX.md) | 100 cumulative lessons; cross-linked to LIG subjects where useful |
 
-Do not split the engineering lesson numbers into first 50/last 50: many LIG subjects draw from lessons across both halves. The semester files are the authoritative S1/S2 organization.
+Do not split the engineering lesson numbers into first 50/last 50: many LIG subjects draw from lessons across both halves. The course exercise files under `lessons/S1/` and `lessons/S2/` are the semester organization.
 
 ## Engineering sequence
 
@@ -54,4 +54,4 @@ For the LIG tracks, use each subject pack's exercises and the semester mastery r
 - Lesson 085 uses the matching CMU BusTub project and its `check-tests` harness.
 - Lesson 090 uses the MIT 6.5840 Raft lab and the versioned `raft1` test target in the local upstream checkout.
 
-Run `python tools/validate_all.py` for repository checks. Run `python tools/run_lig_tests.py s1` or `s2` for subject-code acceptance tests; the initial failures are the unfinished exercises. See [SOURCES.md](SOURCES.md) for upstream links and [CODE-AUDIT.md](CODE-AUDIT.md) for what has and has not been verified locally.
+Run `python tools/validate_all.py` for repository checks. Run `python tools/run_semester_tests.py s1` or `s2` for subject-code acceptance tests; the initial failures are the unfinished exercises. See [SOURCES.md](SOURCES.md) for upstream links and [CODE-AUDIT.md](CODE-AUDIT.md) for what has and has not been verified locally.
