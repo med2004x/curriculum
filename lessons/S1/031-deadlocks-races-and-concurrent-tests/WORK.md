@@ -1,7 +1,8 @@
-# Lesson 031 — Problem Set
+# Lesson 031 — Deadlocks, Races, and Concurrent Tests Problems
 
-**Topic:** Deadlocks, Races, and Concurrent Tests.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
@@ -11,10 +12,6 @@
 
 3. Design a concurrency test with explicit barriers/channels to control the relevant schedule and a timeout only as a bounded failure guard.
 
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
-
 ## Run and check
 
 ```powershell
@@ -22,12 +19,12 @@ Set-Location lessons/S1/031-deadlocks-races-and-concurrent-tests/code
 go test -race exercise.go exercise_test.go
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Deadlock lab
 
 Construct a two-lock deadlock with controlled timing, detect it, then fix it using a lock-order discipline or different ownership model.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

@@ -1,31 +1,6 @@
 # Lesson 013 — Pointers, Addresses, and Memory Layout
 
-## Threads
-
-**Primary:** C
-
-**Supporting:** address-of; dereference; object lifetime; static, automatic, and allocated storage
-
-**Math companion:** functions and graphs
-
-**Time:** 3–4 hours. **Prerequisites:** Lesson 012.
-
-## What you will be able to do
-
-1. Distinguish a pointer value from the object it points to.
-2. Trace `&` and `*` and identify when a pointer is valid to dereference.
-3. Relate C object lifetime to the common static, stack, and heap model.
-4. Explain why returning a pointer to an automatic local creates undefined behavior.
-5. Use address output and a sanitizer as evidence without treating an observed address as a language guarantee.
-
-## Retrieve first (no notes)
-
-1. In Lesson 012, what fields did one log record contain, and which separator split them?
-2. Why was a writable line buffer passed to `parse_record`?
-3. What should the CLI send to stderr when a record is malformed?
-4. Which command linked `main.c` with `log.c` into one executable?
-
-Answer from memory. Then connect the lifetime of the `line` buffer in Lesson 012 to the pointer rules in this lesson: a pointer is useful only while the pointed-to object exists.
+Read this explanation, then solve the problems in [WORK.md](WORK.md). The work card names the files to edit and how to check your work.
 
 ## 1. A pointer is a value, not an object
 
@@ -114,89 +89,6 @@ ASAN_OPTIONS=detect_stack_use_after_return=1 ./bad
 
 The compiler may warn that the function returns the address of a local. If AddressSanitizer detects the invalid read, record the exact report and source line. Sanitizer support and report wording vary by platform; absence of a report does not make the C access valid. The language rule comes from object lifetime, not from the tool's output.
 
-## Predict, then observe
+## Next step
 
-1. Predict which objects in `layout.c` remain alive after `main` exits.
-2. Predict which printed values can change between runs and which should not.
-3. Predict what `*pointer = 44` does when `pointer` points to the live automatic `automatic` variable.
-4. Predict whether `bad_pointer`'s returned address is valid after the call.
-5. Predict what evidence a sanitizer may report, and what its absence cannot prove.
-6. Predict why `free(heap)` ends the allocated object's lifetime.
-
-Record addresses as observations from one run, not as portable constants. Label every dereference as valid or invalid before running it.
-
-## Build from blank
-
-1. Declare one initialized global and one zero-initialized global; predict their initial values.
-2. Add a function with a `static` local and explain why its address remains valid after return.
-3. Add one automatic local and one checked `malloc` allocation; print all addresses using `%p` and cast to `(void *)`.
-4. Free the heap object exactly once and never read it afterward.
-5. Build the separate invalid-lifetime experiment with AddressSanitizer and save the compiler warning and runtime report, if produced.
-
-Use a debugger breakpoint inside the function if available. Inspect the frame and locals, then distinguish debugger observations from guarantees made by the C language.
-
-## Failure drill
-
-1. Return a pointer to an automatic local and explain the exact lifetime boundary.
-2. Read through that pointer only in the sanitizer experiment; classify any output as undefined behavior, not as a stable result.
-3. Remove the `malloc` null check, then explain which failure path became unsafe.
-4. Read through the heap pointer after `free`; identify the use-after-free before running a sanitizer.
-5. Compare `p == q` with `*p == *q` using two live integers that have equal values but distinct addresses.
-
-Restore the safe `layout.c` program and verify that the heap object is freed once and no dead object is dereferenced.
-
-## Transfer
-
-In Go, return a pointer to a local variable and run `go build -gcflags="-m"`. Find the escape-analysis message. Explain why Go can move the object so it outlives the function, while C requires the programmer to choose storage whose lifetime is long enough.
-
-## Retrieval questions
-
-1. What does `&value` produce, and what does `*pointer` access?
-2. When does the lifetime of a non-static local end?
-3. Why is dereferencing a pointer to a returned local undefined behavior?
-4. Which storage durations keep an object alive beyond its creating function?
-5. What can an ASan report establish, and what can silence not establish?
-6. Why should arbitrary object pointers not be ordered to infer a portable memory layout?
-
-## Evidence to record
-
-Create `lesson013/EVIDENCE.md` with:
-
-```text
-Prediction of storage durations:
-
-Build command:
-
-Values and address observations:
-
-One address change between runs:
-
-Sanitizer command and report, if available:
-
-Why a plausible stale value is not valid evidence:
-```
-
-## Common mistakes
-
-- Confusing a pointer's numeric address with the lifetime of the object there.
-- Assuming the stack and heap arrangement is specified by C.
-- Treating one successful stale-pointer read as defined behavior.
-- Forgetting that `free` ends the allocated object's lifetime.
-- Comparing unrelated pointers to infer a portable address order.
-- Assuming a sanitizer must diagnose every undefined behavior on every platform.
-
-## Precision checks
-
-1. State the lifetime rule for each object in `layout.c`.
-2. Explain why `%p` receives a `(void *)` argument.
-3. Separate a platform's observed address layout from a C guarantee.
-4. Identify the exact operation that becomes invalid after `bad_pointer` returns.
-5. Explain why no sanitizer report cannot prove the access was valid.
-
-## Assigned material
-
-The supporting source notes that previously lived in the separate reference tree have been folded into the canonical lesson sequence. Use the lecture first, then the adjacent [`WORK.md`](WORK.md). The unified external/source map is [`../../SOURCES.md`](../../SOURCES.md).
-
-## Mastery gate
-
-You pass when you can distinguish pointer values from pointed-to objects, trace the five live objects in the address program, explain the exact lifetime violation in `bad_pointer`, and compare the C failure with Go escape analysis. Your evidence must separate portable language rules from one platform's address and sanitizer observations.
+Open [WORK.md](WORK.md), complete its problems in order, and record your commands and results in [EVIDENCE.md](EVIDENCE.md).

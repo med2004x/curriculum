@@ -1,19 +1,16 @@
-# Lesson 026 — Problem Set
+# Lesson 026 — File Descriptors and Go I/O Problems
 
-**Topic:** File Descriptors and Go I/O.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
-1. Build the smallest useful version: Build a small C program that writes to stdout and stderr.
+1. Build a small C program that writes to stdout and stderr.
 
-2. Extend it with one explicit boundary case: Redirect each stream separately.
+2. Redirect each stream separately.
 
-3. Rebuild the same behavior with one changed constraint: Then connect two processes with a pipe and describe the byte flow.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
+3. Then connect two processes with a pipe and describe the byte flow.
 
 ## Run and check
 
@@ -24,12 +21,12 @@ go run exercise.go
 
 Add `exercise_test.go` with normal, boundary, and failure cases; a successful build alone is not a passing assignment.
 
-## Stretch problem
+## Optional challenge
 
 ### File copier with boundaries
 
 Build a Go file-copy utility with explicit buffering, error handling, and close-order checks. Test empty, large, and unreadable inputs.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

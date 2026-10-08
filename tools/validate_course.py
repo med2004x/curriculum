@@ -13,7 +13,7 @@ lesson_dirs = sorted((p for semester in ('S1', 'S2') for p in (LESSONS / semeste
 if len(lesson_dirs) != 100:
     errors.append(f'expected 100 lesson directories, found {len(lesson_dirs)}')
 
-required_problem_set = ['## Problems', '## Run and check', '## Turn in']
+required_problem_set = ['## Problems', '## Run and check', '## Submit']
 
 for i, d in enumerate(lesson_dirs, 1):
     if not d.name.startswith(f'{i:03d}-'):
@@ -28,17 +28,10 @@ for i, d in enumerate(lesson_dirs, 1):
         errors.append(f'{d.name}: missing WORK.md')
         continue
     txt = work.read_text(encoding='utf-8', errors='replace')
-    work_headings = (
-        ["## Before coding", "## Exercises", "## Record and check", "## Done when"]
-        if d.name == '001-programs-machines-and-the-terminal'
-        else required_problem_set
-    )
+    work_headings = required_problem_set
     for h in work_headings:
         if h not in txt: errors.append(f'{d.name}: missing {h}')
-    if d.name == '001-programs-machines-and-the-terminal':
-        if txt.count('### Exercise ') < 5:
-            errors.append(f'{d.name}: fewer than 5 independent exercises')
-    elif not re.search(r'^\s*\d+\.\s+|^### Task\s+\d+', txt, re.M):
+    if not re.search(r'^\s*\d+\.\s+|^### Task\s+\d+', txt, re.M):
         errors.append(f'{d.name}: problem set has no numbered tasks')
     for marker in ['TBD', 'FIXME', 'FILL IN HERE', 'INSERT DATA HERE']:
         if marker.lower() in txt.lower(): errors.append(f'{d.name}: unresolved placeholder {marker}')
@@ -72,13 +65,13 @@ for name in ['README.md', 'START-TODAY.md', 'SETUP.md', 'CURRICULUM.md', 'LESSON
 for name in ['lessons/S1', 'lessons/S2']:
     if not (ROOT/name).is_dir(): errors.append(f'missing semester exercise folder: {name}')
 
-# The original lecture READMEs must retain their structure and minimum depth.
+# Lecture pages keep the explanation and point directly to the problem card.
 for d in lesson_dirs:
     txt=(d/'README.md').read_text(encoding='utf-8', errors='replace')
-    if len(txt.splitlines()) < 120: errors.append(f'{d.name}: lecture unexpectedly short')
-    if txt.count('## Threads') != 1: errors.append(f'{d.name}: lecture missing Threads section')
-    if '## What you will be able to do' not in txt: errors.append(f'{d.name}: lecture missing learning outcomes')
-    if d.name != '074-graceful-shutdown-and-lifecycles' and '## Mastery gate' not in txt: errors.append(f'{d.name}: lecture missing mastery gate')
+    if '## Next step' not in txt: errors.append(f'{d.name}: missing direct path to its problem card')
+    if not re.search(r'^## (?:\d+\.|Problem and model)', txt, re.M): errors.append(f'{d.name}: missing lesson explanation')
+    if re.search(r'^## (?:\d+\. )?(?:Retrieval questions|Common mistakes|Evidence to record|Mastery gate)', txt, re.M):
+        errors.append(f'{d.name}: repeated study boilerplate remains in README.md')
 
 print(f'lessons: {len(lesson_dirs)}')
 print(f'work packets: {sum(1 for d in lesson_dirs if (d/"WORK.md").exists())}')

@@ -1,19 +1,16 @@
-# Lesson 055 — Problem Set
+# Lesson 055 — Go PostgreSQL Repositories and Tests Problems
 
-**Topic:** Go PostgreSQL Repositories and Tests.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
-1. Build the smallest useful version: Replace a memory repository with PostgreSQL while keeping the service interface unchanged.
+1. Replace a memory repository with PostgreSQL while keeping the service interface unchanged.
 
-2. Extend it with one explicit boundary case: Write a test for creating and retrieving a task through HTTP against a real PostgreSQL instance.
+2. Write a test for creating and retrieving a task through HTTP against a real PostgreSQL instance.
 
-3. Rebuild the same behavior with one changed constraint: Write a second case with one changed constraint and verify it.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
+3. Write a second case with one changed constraint and verify it.
 
 ## Run and check
 
@@ -22,12 +19,12 @@ Set-Location lessons/S2/055-go-postgresql-repository-and-tests/code
 go test -race exercise.go exercise_test.go
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Go repository layer
 
 Implement a Go repository against PostgreSQL with transaction-aware methods and integration tests. Include one test for a constraint failure.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

@@ -1,7 +1,8 @@
-# Lesson 030 — Problem Set
+# Lesson 030 — Synchronization, Channels, and Mutexes Problems
 
-**Topic:** Synchronization, Channels, and Mutexes.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
@@ -13,10 +14,6 @@
 
 4. Build a separate two-lock example with opposite acquisition order, draw the wait-for graph, then enforce a global order.
 
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
-
 ## Run and check
 
 ```powershell
@@ -24,12 +21,12 @@ Set-Location lessons/S1/030-synchronization-channels-and-mutexes/code
 go test -race exercise.go exercise_test.go
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Concurrent pipeline
 
 Build a three-stage Go pipeline using channels and cancellation. Prove that every goroutine has an exit path and that no stage can block forever.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

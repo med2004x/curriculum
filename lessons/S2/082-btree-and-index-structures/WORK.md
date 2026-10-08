@@ -1,19 +1,16 @@
-# Lesson 082 — Problem Set
+# Lesson 082 — B+ Trees and Index Structures Problems
 
-**Topic:** B+ Trees and Index Structures.
-**Your files:** `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.c`.
 
 ## Problems
 
-1. Build the smallest useful version: Implement a B+ tree in Go with a small, deliberately low branching factor (e.g. max 4 keys per node — small enough to force splits quickly during testing, though a real implementation would use a much higher factor sized to a disk page).
+1. Implement a B+ tree in Go with a small, deliberately low branching factor (e.g. max 4 keys per node — small enough to force splits quickly during testing, though a real implementation would use a much higher factor sized to a disk page).
 
-2. Extend it with one explicit boundary case: Implement `search(key)` (traverse from root to the correct leaf, returning whether the key exists and its associated value) and `insert(key, value)`.
+2. Implement `search(key)` (traverse from root to the correct leaf, returning whether the key exists and its associated value) and `insert(key, value)`.
 
-3. Rebuild the same behavior with one changed constraint: Insert keys in increasing order (1, 2, 3, 4, 5, ...) and trace, at each insert, whether a split occurred and at which level.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
+3. Insert keys in increasing order (1, 2, 3, 4, 5, ...) and trace, at each insert, whether a split occurred and at which level.
 
 ## Run and check
 
@@ -23,12 +20,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### B+ tree lab
 
 Implement a small B+ tree insertion/search model, trigger a split, and print the tree before and after. Explain the separator-key invariant.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

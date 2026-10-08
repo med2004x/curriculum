@@ -1,29 +1,6 @@
 # Lesson 019 — Searching, Sorting, and Measuring Work
 
-## Threads
-**Primary:** C/Algorithms
-
-**Supporting:** search; sorting; measurement and benchmarking
-
-**Math companion:** asymptotic cost; logarithms; stable ordering
-
-**Time:** 3–4 hours. **Prerequisites:** Lesson 018.
-
-## What you will be able to do
-
-1. Explain the difference between linear search and binary search.
-2. Explain the difference between easy-to-implement sorts and efficient sorts.
-3. Measure a task with more than one data point and explain what a benchmark does and does not show.
-4. Interpret the relationship between algorithmic cost and empirical runtime.
-
-## Retrieve first (no notes)
-
-1. What is a hash table?
-2. What is a collision?
-3. What is the load factor?
-4. Why do hash tables resize?
-5. What is a bucket or slot?
-6. Why is expected lookup near constant in a well-distributed table?
+Read this explanation, then solve the problems in [WORK.md](WORK.md). The work card names the files to edit and how to check your work.
 
 ## 1. Problem and model
 
@@ -93,88 +70,6 @@ Common benchmarking mistakes:
 
 A valid conclusion is narrow: “for this workload and this machine, algorithm A was faster than algorithm B.” It is not a universal statement unless the inputs and setup are controlled.
 
-## Predict, then observe
+## Next step
 
-1. Predict whether binary search can work on unsorted input.
-2. Predict the worst-case cost of insertion sort on `n` items.
-3. Predict the worst-case cost of merge sort on `n` items.
-4. Predict whether a benchmark of one timed run is enough to conclude a performance difference.
-5. Predict what changes when input size doubles in a linear-time algorithm.
-6. Predict what changes when input size doubles in a logarithmic-time algorithm.
-
-## Build from blank
-
-1. Implement a linear search and a binary search on an integer array.
-2. Implement insertion sort and merge sort on a small integer array.
-3. Measure the runtime of each algorithm over several input sizes.
-4. Record the input sizes and observed timing pattern.
-
-## Failure drill
-
-1. Sort an array with duplicate keys and explain whether the sort is stable.
-2. Time a function after a warm-up and compare it to the first run.
-3. Compare an already-sorted array to a reverse-sorted array with insertion sort.
-4. Explain what each benchmark result does and does not prove.
-
-## Transfer
-
-Change exactly one condition: sort a list of strings instead of integers, or search for a missing value as well as a present value. Explain whether the algorithm remains correct, and whether the cost model changes.
-
-## Retrieval questions
-
-1. What is a comparison sort?
-2. What is a stable sort?
-3. What is the cost of linear search?
-4. What is the cost of binary search on sorted data?
-5. What is a benchmark?
-6. Why is repeated measurement better than a single timing?
-
-## Evidence to record
-
-Create `lesson019/EVIDENCE.md` with exactly this structure:
-
-```text
-# Lesson 019 evidence
-
-Prediction:
-
-Command or calculation:
-
-Observed result:
-
-Failure reproduced:
-
-What changed after the fix:
-
-One sentence I can recall tomorrow:
-```
-
-## Common mistakes
-
-- Using binary search on unsorted data.
-- Treating a single timing as a universal truth.
-- Confusing algorithmic complexity with the runtime of one machine.
-- Forgetting that sort stability matters for multi-key data.
-
-## Precision checks
-
-1. State the cost of linear search in one sentence.
-2. State the cost of binary search in one sentence.
-3. Explain why insertion sort is often slower than merge sort on large inputs.
-4. Explain one reason a benchmark may be misleading.
-5. State the difference between a stable and unstable sort.
-
-## University revision bridge
-
-The academic model is asymptotic cost: we reason about how the algorithm scales with input size. The engineering model is benchmarking: we measure one machine under one workload and then connect that evidence to the theoretical model.
-
-## Assigned material
-
-- `07-data-structures-and-algorithms/lesson-10-linear-search/README.md`
-- `07-data-structures-and-algorithms/lesson-12-sorting/README.md`
-- `07-data-structures-and-algorithms/lesson-17-binary-search/README.md`
-- `18-performance-engineering/lesson-01-benchmarking/README.md`
-
-## Mastery gate
-
-You pass when you can explain the basic search and sort families, compare their asymptotic cost, and describe how a benchmark should be designed so that the measured difference corresponds to the actual algorithmic difference rather than just machine noise.
+Open [WORK.md](WORK.md), complete its problems in order, and record your commands and results in [EVIDENCE.md](EVIDENCE.md).

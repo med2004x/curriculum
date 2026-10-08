@@ -1,7 +1,8 @@
-# Lesson 068 — Problem Set
+# Lesson 068 — Handlers, Services, Repositories, and Boundaries Problems
 
-**Topic:** Handlers, Services, Repositories, and Boundaries.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
@@ -10,10 +11,6 @@
 2. Implement service validation and a fake repository for isolated tests.
 
 3. Add an HTTP handler that maps typed errors to documented responses; add a separate database-backed repository test.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -24,12 +21,12 @@ go run exercise.go
 
 Add `exercise_test.go` with normal, boundary, and failure cases; a successful build alone is not a passing assignment.
 
-## Stretch problem
+## Optional challenge
 
 ### Service boundaries
 
 Split a backend feature into handler, service, and repository layers. Test each layer at its appropriate scope and document one boundary that prevents coupling.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

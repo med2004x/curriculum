@@ -1,25 +1,6 @@
 # Lesson 002 — Values, Bytes, and Your First C Program
 
-## Threads
-
-**Primary:** C
-
-**Supporting:** Bits/bytes; source code; shell execution
-
-**Math companion:** number representations
-
-**Time:** 3–4 hours. **Prerequisites:** Lesson 001.
-
-## What you will be able to do
-
-1. Convert between binary, hexadecimal, and decimal by hand.
-2. Say how many values *n* bits can hold, and what range a signed or unsigned integer of a given width covers.
-3. Use `printf` format specifiers correctly and predict what a wrong one prints.
-4. Explain integer division and remainder, including with negative operands.
-
-## Retrieve first (no notes, 5 minutes)
-
-From Lesson 001: the four stages from source text to exit status; why `./` is needed; what exit status `0` means; why a 4-character file can be 10 bytes. Write the answers, *then* check Lesson 001. Skipping this step is the single most common reason the spacing effect fails.
+Read this explanation, then solve the problems in [WORK.md](WORK.md). The work card names the files to edit and how to check your work.
 
 ## 1. Place value in any base
 
@@ -120,69 +101,6 @@ The identity `(a / b) * b + (a % b) == a` always holds. Verify it on the rows ab
 
 **Characters are small integers.** `'A'` is 65, `'a'` is 97, `'0'` is 48. So `'a' - 'A'` is 32, and `'7' - '0'` is the number 7. This is how you turn a digit character into a value.
 
-## 6. Predict, then observe
+## Next step
 
-Write predictions first.
-
-1. `printf("%d\n", 7 / 2);` and `printf("%d\n", -7 / 2);`
-2. `printf("%d\n", -7 % 2);`
-3. `printf("%.2f\n", 7 / 2.0);`
-4. `printf("%c %d\n", 'A' + 2, 'A' + 2);`
-5. `printf("%x\n", 255);`
-6. What is `sizeof(char)`? Is it ever anything other than 1?
-
-Verified outputs to compare against: `3`, `-3`, `-1`, `3.50`, `C 67`, `ff`, and `1` (the standard *defines* `sizeof(char)` as 1).
-
-## 7. Build from blank
-
-Write `values.c` that prints, for the integer `n = 200`:
-
-1. `n` in decimal, hex (`%x`), and as a character (`%c`);
-2. the size in bytes of `int`, `long`, `char`, and `double` using `%zu`;
-3. the quotient and remainder of `n` divided by 7 (and one negative case: `-n`);
-4. `n / 3` computed as an integer and as a `double` with three decimals.
-
-Then write `convert.c` that hard-codes one decimal number and prints its binary form, computed with a loop and `%` and `/` (do not use a library). Compare against your hand conversion from section 1.
-
-## 8. Failure drill
-
-Do each on purpose and record what you see.
-
-1. Pass a `double` to `%d`. Note the compile warning text, then run it and note the output. The output is garbage and can differ across builds. *Write down why "it printed something" is not evidence that it works.*
-2. Use `%d` for a `long` holding `5000000000`. Compare to `%ld`.
-3. Divide an `int` by a divisor read at runtime (`atoi(argv[1])`, then run with `0`), and a `double` by `0.0`. Verified on gcc 13: the integer version dies with `Floating point exception` and exit status 136 (128 + SIGFPE; the message name is historical and misleading, since it is an *integer* trap). The `double` version prints `inf`. **Trap inside the trap:** if you write `int z = 0; 1 / z` where the compiler can see the zero, behaviour is undefined and one test build printed `0` and exited normally. Undefined means "anything", including "looks fine". That is the lesson.
-4. Print `sizeof` of an array and of a pointer to it (you will meet this again in Lesson 007).
-
-## 9. Transfer
-
-Change the constraint: input is now a **negative** number in 8-bit two's complement, given as a pattern such as `1111 0110`. Work out its signed value by hand (invert the bits, add 1, negate: `1111 0110` → `0000 1001` → `0000 1010` → **−10**), then explain what your `convert.c` would need to change to print it.
-
-## 10. Retrieval questions
-
-1. What is 0xa7 in binary and decimal?
-2. How many distinct values does a 12-bit field hold?
-3. What are the ranges of `uint8_t` and `int8_t`?
-4. Why is `sizeof(long)` not safe to assume?
-5. What does `-7 / 2` print, and what does `-7 % 2` print? State the identity that connects them.
-6. What does `'7' - '0'` evaluate to, and why is that useful?
-
-## 11. Evidence to record
-
-`lesson002/EVIDENCE.md`: your outputs for section 6 next to your *predictions* (mark each right or wrong); the compiler warning from failure drill 1 copied verbatim; the three retrieval answers you got wrong first time, with the correction.
-
-## 12. Common mistakes
-
-- Mixing up "how many bits" with "the largest value" (8 bits hold 256 values but the largest unsigned one is 255).
-- Assuming `%` means "modulo" for negatives. In C it is the *remainder* and carries the dividend's sign.
-- Writing `1 / 2` and expecting `0.5`.
-- Trusting output from a mismatched `printf`. It compiled and printed; that proves nothing.
-
-## Assigned material
-
-The supporting source notes that previously lived in the separate reference tree have been folded into the canonical lesson sequence. Use the lecture first, then the adjacent [`WORK.md`](WORK.md). The unified external/source map is [`../../SOURCES.md`](../../SOURCES.md).
-
-## Mastery gate
-
-You may advance when, without notes, you can convert between binary/hex/decimal for 8-bit values, state the ranges of common integer widths, predict `printf` output for integer and floating division including negatives, and explain why a mismatched format specifier is not "working" just because it printed.
-
-**Do not move on because the example looked familiar.** Familiarity is cheap; blank-page recall is what actually learning costs.
+Open [WORK.md](WORK.md), complete its problems in order, and record your commands and results in [EVIDENCE.md](EVIDENCE.md).

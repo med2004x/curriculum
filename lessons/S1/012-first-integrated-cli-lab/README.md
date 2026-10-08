@@ -1,31 +1,6 @@
 # Lesson 012 — Integrated Lab 1: Small C CLI
 
-## Threads
-
-**Primary:** C/Linux
-
-**Supporting:** arguments; files; parsing; arrays; functions; tests; Git
-
-**Math companion:** problem decomposition
-
-**Time:** 3–4 hours. **Prerequisites:** Lesson 011.
-
-## What you will be able to do
-
-1. Turn a command-line contract into a multi-file C program.
-2. Parse a delimited record without confusing malformed input with valid data.
-3. Keep a bounded set of records in memory and search it by message text.
-4. Report usage and data errors through stderr and nonzero exit status.
-5. Test parsing and search independently from file I/O.
-
-## Retrieve first (no notes)
-
-1. What does `argc` count, and what is the value of `argv[0]`?
-2. Why should a missing-file error go to stderr rather than stdout?
-3. What stage reports an unresolved external function after compilation?
-4. What should a test for a boundary do before the implementation is changed?
-
-Write from memory: Lesson 009 covered argv and stderr, Lesson 010 compilation versus linking, and Lesson 011 boundary tests.
+Read this explanation, then solve the problems in [WORK.md](WORK.md). The work card names the files to edit and how to check your work.
 
 ## 1. Project contract: a small log indexer
 
@@ -134,86 +109,6 @@ echo $?
 
 Expected output contains the WARN and ERROR records in file order; status is 0. Searching for `Disk` prints nothing and still exits 0 because no matches is not an input failure.
 
-## Predict, then observe
+## Next step
 
-1. Predict which fields the parser extracts from the first sample record.
-2. Predict whether `disk` and `Disk` both match.
-3. Predict the output stream and exit status for a missing file.
-4. Predict whether a malformed middle line prevents later valid records from being searched.
-5. Predict what happens when a file contains 1,001 valid records.
-6. Predict which unit test detects accepting `BOGUS` as a level.
-
-Record each prediction before running. Compare stdout, stderr, and status separately; they are distinct observations.
-
-## Build from blank
-
-1. Write the record type, enum, and prototypes in `log.h`.
-2. Implement and test `parse_record` before opening any file.
-3. Implement `record_matches` and verify case sensitivity.
-4. Write the CLI argument check, file loop, fixed-capacity array, and output path.
-5. Compile the CLI and tests with the exact commands above; save their results.
-
-## Failure drill
-
-1. Treat `BOGUS` as `INFO`; confirm the invalid-level test fails.
-2. Remove the second separator from one input; confirm parsing rejects it.
-3. Search for an absent term; confirm status is still zero.
-4. Rename the input file; confirm the filename diagnostic appears on stderr and the process exits nonzero.
-5. Make a line longer than the input buffer; confirm it is rejected as one malformed line, not read as two records.
-
-For each experiment, identify whether the defect is in parsing, file I/O, output routing, or command-line validation. Restore the source and rerun all tests.
-
-## Transfer
-
-Change the record format to `LEVEL|timestamp|message` while preserving all other behavior. Update the parser tests first, including one valid record and one invalid level. Only then change the implementation. Your evidence must show the same search results on equivalent data and a nonzero status for malformed input.
-
-## Retrieval questions
-
-1. What are the four valid fields or constraints in one log record?
-2. Why does the parser receive a writable line buffer?
-3. Which channel receives parse errors, and what process status follows any malformed line?
-4. Why does a search with no matches still return status zero?
-5. Which source file owns file I/O, and which one owns record parsing?
-6. What should happen when the record capacity of 1,000 is exceeded?
-
-## Evidence to record
-
-Create `lesson012/EVIDENCE.md` containing:
-
-```text
-Design sketch:
-
-Build commands:
-
-Unit-test result:
-
-Search input and output:
-
-Malformed-line diagnostic and exit status:
-
-One bug reproduced and repaired:
-
-Transfer format test:
-```
-
-## Common mistakes
-
-- Searching a raw line before validating its timestamp and level.
-- Treating an unknown level as a default instead of rejecting the record.
-- Losing track of the line number after skipping malformed input.
-- Forgetting that `fgets` may return a fragment of an overlong line.
-- Returning failure for a valid search that simply has no matches.
-- Mixing diagnostics with records on stdout.
-- Compiling `main.c` without `log.c` and mistaking the linker error for a parser bug.
-
-## University revision bridge
-
-Represent parsing as a partial function from strings to records: valid strings map to one `Record`; malformed strings have no result. The tests exhibit selected valid and invalid inputs, but they do not prove correctness for all strings. Relate each test to one precondition in the file format.
-
-## Assigned material
-
-The supporting source notes that previously lived in the separate reference tree have been folded into the canonical lesson sequence. Use the lecture first, then the adjacent [`WORK.md`](WORK.md). The unified external/source map is [`../../SOURCES.md`](../../SOURCES.md).
-
-## Mastery gate
-
-You pass when you can explain the record contract, rebuild the parser and CLI from blank across the header and two source files, test malformed data and search behavior, and distinguish stdout, stderr, and exit status. Complete the transfer format without changing unrelated behavior, then reproduce the build from a clean directory.
+Open [WORK.md](WORK.md), complete its problems in order, and record your commands and results in [EVIDENCE.md](EVIDENCE.md).

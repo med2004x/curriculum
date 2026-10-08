@@ -1,7 +1,8 @@
-# Lesson 023 — Problem Set
+# Lesson 023 — Caches, Locality, and Data Layout Problems
 
-**Topic:** Caches, Locality, and Data Layout.
-**Your files:** `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.c`.
 
 ## Problems
 
@@ -11,10 +12,6 @@
 
 3. Record repeated timings and, when available, cache-miss counters; confirm both variants produce the same sum.
 
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
-
 ## Run and check
 
 ```powershell
@@ -23,12 +20,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Locality experiment
 
 Compare two data layouts over a large dataset and benchmark traversal. Explain the result using cache lines and access locality rather than hand-waving.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

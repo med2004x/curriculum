@@ -1,7 +1,8 @@
-# Lesson 080 — Problem Set
+# Lesson 080 — Isolation, Containers, and Supply Chain Problems
 
-**Topic:** Isolation, Containers, and Supply Chain.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
@@ -10,10 +11,6 @@
 2. Compare isolated networking with host networking and record visible interfaces/routes.
 
 3. Compare root/default capabilities with a non-root, capability-dropped, read-only configuration; test one operation expected to be denied.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -24,12 +21,12 @@ go run exercise.go
 
 Add `exercise_test.go` with normal, boundary, and failure cases; a successful build alone is not a passing assignment.
 
-## Stretch problem
+## Optional challenge
 
 ### Supply-chain boundary
 
 Harden a containerized build against dependency and privilege risks. Record the changed attack surface and verify the build remains reproducible.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

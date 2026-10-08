@@ -1,19 +1,16 @@
-# Lesson 061 — Problem Set
+# Lesson 061 — IPC, Pipes, and Process Composition Problems
 
-**Topic:** IPC, Pipes, and Process Composition.
-**Your files:** `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.c`.
 
 ## Problems
 
-1. Build the smallest useful version: Write a C program that creates a pipe, forks, and has the child write a sequence of messages to the pipe's write end while the parent reads and prints them from the read end.
+1. Write a C program that creates a pipe, forks, and has the child write a sequence of messages to the pipe's write end while the parent reads and prints them from the read end.
 
-2. Extend it with one explicit boundary case: Ensure the child closes the write end when done, and the parent's read loop correctly detects EOF (a `read()` returning 0) and exits its loop rather than blocking forever.
+2. Ensure the child closes the write end when done, and the parent's read loop correctly detects EOF (a `read()` returning 0) and exits its loop rather than blocking forever.
 
-3. Rebuild the same behavior with one changed constraint: Modify step 1 so the parent (consumer) deliberately reads slowly (add a small `sleep()` between reads) while the child (producer) writes a large volume of data quickly with no delay.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
+3. Modify step 1 so the parent (consumer) deliberately reads slowly (add a small `sleep()` between reads) while the child (producer) writes a large volume of data quickly with no delay.
 
 ## Run and check
 
@@ -23,12 +20,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### IPC pipeline
 
 Compose two processes with pipes so one transforms another’s output. Handle broken-pipe and child-exit cases without hanging.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

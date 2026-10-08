@@ -1,7 +1,8 @@
-# Lesson 065 — Problem Set
+# Lesson 065 — Go HTTP, JSON, and SQL Problems
 
-**Topic:** Go HTTP, JSON, and SQL.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
@@ -10,10 +11,6 @@
 2. Validate the request and call a context-aware repository method using parameters.
 
 3. Map success, malformed input, invalid fields, not-found, and internal error to distinct outcomes.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -24,12 +21,12 @@ go run exercise.go
 
 Add `exercise_test.go` with normal, boundary, and failure cases; a successful build alone is not a passing assignment.
 
-## Stretch problem
+## Optional challenge
 
 ### JSON + SQL service
 
 Build a Go HTTP endpoint that validates JSON input, performs one SQL operation, and returns a stable JSON contract with error cases tested.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

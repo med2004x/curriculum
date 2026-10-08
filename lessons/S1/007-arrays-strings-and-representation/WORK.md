@@ -1,15 +1,14 @@
-# Lesson 007 — Problem Set
+# Lesson 007 — Arrays, Strings, and Representation Problems
 
-**Topic:** Arrays, Strings, and Representation.
-**Your files:** `code/array_stats.c`, `code/safe_index.c`, `code/string_report.c`, `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/array_stats.c`, `code/safe_index.c`, `code/string_report.c`, `code/exercise.c`.
 
 ## Problems
 
 1. `array_stats.c`: print array size and element count, then sum five integers.
 2. `string_report.c`: report `sizeof`, `strlen`, and the final-byte value for a C string.
 3. `safe_index.c`: reject indexes outside the valid range before accessing the array.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -25,12 +24,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### String analyzer
 
 Write a bounded C string analyzer that reports length, digit/letter counts, and reversed output without writing past the buffer.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

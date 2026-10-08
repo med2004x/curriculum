@@ -1,34 +1,21 @@
-# Lesson 085 — Problem Set
+# Lesson 085 — Database Internals Lab Problems
 
-**Topic:** Database Internals Lab.
-**Your files:** `code/exercise.c`, `code/exercise.sql`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md). Complete the two short local exercises, then use BusTub for the full database project.
 
 ## Problems
 
-1. Build the smallest useful version: If using BusTub directly, complete at least the buffer pool manager project and the B+ tree index project from the official course materials (`https://github.com/cmu-db/bustub`), using its existing test infrastructure to verify correctness — this is the recommended default path, since BusTub's tests are considerably more rigorous than what's practical to con.
-
-2. Extend it with one explicit boundary case: If building your own integrated system instead (a reasonable alternative if you want the components to be ones you fully wrote yourself, end to end), integrate your own Lessons 1-6 implementations into one coherent system with this minimum scope:
-
-3. Rebuild the same behavior with one changed constraint: **Storage layer**: your Lesson 1 page format, with records actually read/written through your Lesson 2 buffer pool (not bypassing it) — every page access in the rest of the system should go through `fetchPage`/`unpinPage`, with correct pin discipline throughout.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
+1. In `code/exercise.c`, implement `fetch`. Return the existing frame on a hit. On a miss, use the first free frame; when all four frames are occupied, replace frames in round-robin order. Update `hits` and `misses`. The program should report two accesses to page 7 as one miss followed by one hit.
+2. In `code/exercise.sql`, add a `CHECK` constraint that rejects negative `hit_count`, then select rows in descending `hit_count` order. Try a negative insert to confirm the constraint works.
+3. In the BusTub checkout, complete the buffer-pool manager project and its tests, then the B+ tree project and its tests. Use the handout for the same semester as the checkout.
 
 ## Run and check
 
-Run each SQL task against a disposable PostgreSQL database using `psql -v ON_ERROR_STOP=1 -f <task-file>`. Check the returned rows and verify invalid writes are rejected.
+Build `exercise.c` with your C compiler and run it. Run `exercise.sql` in a disposable PostgreSQL session. For BusTub, follow the handout's build steps and test target (often `make check-tests` from the build directory).
 
-## Stretch problem
+## Course lab
 
-### CMU BusTub project
+Use the official [BusTub repository](https://github.com/cmu-db/bustub) and matching [CMU 15-445 project guide](https://15445.courses.cs.cmu.edu/). Record the semester, commit, test command, and results in [EVIDENCE.md](EVIDENCE.md). Keep your solution private and follow the course's academic-integrity rules.
 
-Select the matching BusTub project on pages, buffer pools, B+ trees, query execution, or transactions from the semester that matches the local upstream checkout. Implement the official project API and use the supplied tests. `exercise.c` is a concept prompt only; it is not a miniature BusTub substitute.
+## Submit
 
-## Upstream lab: CMU BusTub
-
-Use the official [BusTub project](https://github.com/cmu-db/bustub) and its [matching semester project guide](https://15445.courses.cs.cmu.edu/). APIs and tests vary by release. Follow that handout's CMake workflow, then run `make check-tests` from the build directory (or the target prescribed for that release). Record the semester/commit, target, output, and one invariant in `EVIDENCE.md`. Keep solutions in a private working copy and follow the course FAQ and academic-integrity rules. The local C/SQL starters are prompts, not a database engine or replacement harness.
-
-## Turn in
-
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the local outputs and BusTub test results. Explain the invariant that prevents an incorrect page from being returned for a requested page ID.

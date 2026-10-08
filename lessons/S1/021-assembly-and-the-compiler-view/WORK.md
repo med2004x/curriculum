@@ -1,7 +1,8 @@
-# Lesson 021 — Problem Set
+# Lesson 021 — Assembly and the Compiler View Problems
 
-**Topic:** Assembly and the Compiler View.
-**Your files:** `code/exercise.c`, `code/exercise.s`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.c`, `code/exercise.s`.
 
 ## Problems
 
@@ -11,10 +12,6 @@
 
 3. Compare output at `-O0` and `-O2`; explain a transformation without claiming its textual form is guaranteed.
 
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
-
 ## Run and check
 
 ```powershell
@@ -23,12 +20,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Compiler-view experiment
 
 Compile the same C function at two optimization levels, inspect assembly, and explain three source-to-machine transformations visible in the output.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

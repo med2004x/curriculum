@@ -1,7 +1,8 @@
-# Lesson 016 — Problem Set
+# Lesson 016 — Linked Lists, Invariants, and Cost Problems
 
-**Topic:** Linked Lists, Invariants, and Cost.
-**Your files:** `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.c`.
 
 ## Problems
 
@@ -9,8 +10,6 @@
 2. Implement `push_front`, `search`, and `delete_value`.
 3. Write one example where the list has a cycle and explain why traversal never ends.
 4. Write one example where a freed node remains reachable and explain why that is unsafe.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -20,12 +19,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Invariant list
 
 Implement a singly linked list with insertion and deletion. State the empty/single/multiple-node invariants and test each transition.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

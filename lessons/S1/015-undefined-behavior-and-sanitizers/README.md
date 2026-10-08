@@ -1,29 +1,6 @@
 # Lesson 015 — Undefined Behavior, Sanitizers, and Defensive Debugging
 
-## Threads
-**Primary:** C/Linux
-
-**Supporting:** undefined behavior; sanitizer tooling; defensive checks
-
-**Math companion:** reasoning about program states and invariants
-
-**Time:** 3–4 hours. **Prerequisites:** Lesson 014.
-
-## What you will be able to do
-
-1. Explain what “undefined behavior” means in the C standard and why a compiler is allowed to optimize aggressively around it.
-2. Identify the main categories of UB in C: signed overflow, null dereference, out-of-bounds access, use-after-free, and uninitialized reads.
-3. Explain why `-fsanitize=undefined` and `-fsanitize=address` are not optional when debugging low-level C code.
-4. State one defensive habit that turns a silent bug into a visible, diagnoseable failure.
-
-## Retrieve first (no notes)
-
-1. What is the key property of a valid pointer in C?
-2. What is the difference between an invalid pointer and a null pointer?
-3. Why can a program that compiles cleanly still be wrong?
-4. What does `malloc` return if the allocator fails?
-5. What does a sanitizer add to a program at runtime?
-6. Why is a compiler allowed to assume that UB never happens?
+Read this explanation, then solve the problems in [WORK.md](WORK.md). The work card names the files to edit and how to check your work.
 
 ## 1. Problem and model
 
@@ -92,90 +69,6 @@ For example, a good note is:
 
 A defensive C habit is: always assume an invalid state is possible until proven otherwise. Check all pointer values, array bounds, and integer arithmetic before using an untrusted value.
 
-## Predict, then observe
+## Next step
 
-1. Predict what happens when `INT_MAX + 1` is computed in a signed `int`.
-2. Predict whether a plain compiler warning will catch every UB case.
-3. Predict the effect of compiling with `-O0` compared with `-O2` on the same UB example.
-4. Predict which bug is more likely to be silent: integer overflow or a null pointer dereference.
-5. Predict how AddressSanitizer and UndefinedBehaviorSanitizer differ in what they detect.
-6. Predict which one of the two sanitizers is more likely to report a precise source line for an out-of-bounds access.
-
-## Build from blank
-
-1. Write a program that triggers signed overflow.
-2. Compile it without a sanitizer and record the output.
-3. Compile it with `-fsanitize=undefined` and record the diagnostic.
-4. Repeat the same exercise with a null pointer or invalid index case if you want a second example.
-
-Do not copy a finished answer before you have produced your own minimal example.
-
-## Failure drill
-
-1. Replace a valid pointer with `NULL` and write a dereference.
-2. Access one element past the end of an array.
-3. Read an uninitialized local variable.
-4. For each case, record whether the failure is silent, deterministic, or diagnosed by a sanitizer.
-
-The goal is not to memorize a list of errors. The goal is to see that UB turns an ordinary program into one whose behavior depends on compiler optimization and runtime layout.
-
-## Transfer
-
-Change exactly one constraint in the main UB case: use a different type, different signed boundary, or a different memory bug. For example, replace `INT_MAX` with `INT_MIN`, or use a one-past-the-end access in a small array. Explain why the bug still violates the underlying contract, and what the sanitizer would report.
-
-## Retrieval questions
-
-1. What does undefined behavior mean in C?
-2. Why can a compiler optimize aggressively around UB?
-3. What are two classes of UB that are especially common in C?
-4. What does `-fsanitize=undefined` catch?
-5. What does `-fsanitize=address` catch?
-6. Why does a sanitizer improve the debugging process?
-
-## Evidence to record
-
-Create `lesson015/EVIDENCE.md` with exactly this structure:
-
-```text
-# Lesson 015 evidence
-
-Prediction:
-
-Command or calculation:
-
-Observed result:
-
-Failure reproduced:
-
-What changed after the fix:
-
-One sentence I can recall tomorrow:
-```
-
-## Common mistakes
-
-- Treating UB as “random” instead of as a contract violation.
-- Assuming warnings are equivalent to correctness.
-- Confusing a crash with a fix.
-- Ignoring the compiler optimization level when debugging low-level C code.
-
-## Precision checks
-
-1. State the contract the program violated in one sentence.
-2. Explain the role of the optimizer in one sentence.
-3. Name one sanitizer that helps diagnose out-of-bounds memory access.
-4. Name one sanitizer that helps diagnose signed overflow and invalid arithmetic.
-5. Explain why a well-defined program is not the same as a program that happens to run once.
-
-## University revision bridge
-
-In the university-academic setting, you should be able to state the legal meaning of UB in the standard and connect it to the practical debugging tools used in C. The engineering task is to observe the real failure mode and then fix the contract violation; the academic task is to explain why the language left that case undefined.
-
-## Assigned material
-
-- `03-c-memory-and-systems/lesson-04-undefined-behavior/README.md`
-- `05-linux-and-tools/lesson-05-debuggers/README.md`
-
-## Mastery gate
-
-You pass when you can explain UB in your own words, name at least two UB categories, and describe how sanitizers turn silent bad states into visible errors. You should be able to reproduce one small UB example and explain why the optimizer is allowed to transform it unpredictably.
+Open [WORK.md](WORK.md), complete its problems in order, and record your commands and results in [EVIDENCE.md](EVIDENCE.md).

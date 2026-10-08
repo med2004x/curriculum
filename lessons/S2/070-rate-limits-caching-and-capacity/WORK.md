@@ -1,7 +1,8 @@
-# Lesson 070 — Problem Set
+# Lesson 070 — Rate Limits, Caching, and Capacity Problems
 
-**Topic:** Rate Limits, Caching, and Capacity.
-**Your files:** `code/exercise.go`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.go`.
 
 ## Problems
 
@@ -10,10 +11,6 @@
 2. Implement a token bucket with capacity, refill rate, and last-refill timestamp.
 
 3. Test burst, idle refill, empty bucket, shared-key concurrency, and separate logical client identities.
-
-Do not open the reference implementation until your own attempt has been saved.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -24,12 +21,12 @@ go run exercise.go
 
 Add `exercise_test.go` with normal, boundary, and failure cases; a successful build alone is not a passing assignment.
 
-## Stretch problem
+## Optional challenge
 
 ### Rate-limit + cache
 
 Add a bounded rate limiter and a cache to a small HTTP service. Measure hit rate and rejection behavior, then document the consistency trade-off.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

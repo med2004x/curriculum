@@ -1,7 +1,8 @@
-# Lesson 013 — Problem Set
+# Lesson 013 — Pointers, Addresses, and Memory Layout Problems
 
-**Topic:** Pointers, Addresses, and Memory Layout.
-**Your files:** `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/exercise.c`.
 
 ## Problems
 
@@ -13,8 +14,6 @@
 
 Use a debugger breakpoint inside the function if available. Inspect the frame and locals, then distinguish debugger observations from guarantees made by the C language.
 
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
-
 ## Run and check
 
 ```powershell
@@ -23,12 +22,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### Pointer map
 
 Implement an array transformation using pointers, then print addresses and offsets to explain exactly which object each pointer refers to.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).

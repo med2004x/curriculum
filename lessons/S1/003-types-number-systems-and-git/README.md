@@ -1,25 +1,6 @@
 # Lesson 003 — Types, Number Systems, and Git
 
-## Threads
-
-**Primary:** C
-
-**Supporting:** Integer/float representation; Git snapshots
-
-**Math companion:** arithmetic and algebra foundations
-
-**Time:** 4 hours. **Prerequisites:** Lesson 002.
-
-## What you will be able to do
-
-1. Explain two's complement and predict what happens on overflow for signed and unsigned types.
-2. Explain why floating-point arithmetic is approximate and when `==` on floats is wrong.
-3. Predict implicit type conversions, including the signed/unsigned comparison trap.
-4. Use Git to snapshot, inspect, and undo your own work.
-
-## Retrieve first (no notes)
-
-Convert `0xa7` to binary and decimal. State the range of `int8_t` and `uint8_t`. Say what `-7 / 2` and `-7 % 2` print. Then check Lesson 002.
+Read this explanation, then solve the problems in [WORK.md](WORK.md). The work card names the files to edit and how to check your work.
 
 ## 1. Unsigned integers wrap
 
@@ -140,56 +121,6 @@ build/
 
 Track source, not build output; anyone can regenerate the binary from the source.
 
-## 7. Predict, then observe
+## Next step
 
-1. `uint8_t b = 255; b++;`: value of `b`?
-2. `printf("%u\n", 0u - 1u);`
-3. `-1 < 1u`: true or false, and why?
-4. Is `0.5 + 0.25 == 0.75` reliably true? (Yes: 0.5, 0.25, and 0.75 are exact binary fractions. Verify, then explain why this differs from `0.1 + 0.2`.)
-5. What does `int x = 7; double d = x / 2;` store in `d`? (3.0, not 3.5. The division happens in `int` first.)
-
-## 8. Build from blank
-
-1. `limits.c`: print `INT_MIN`, `INT_MAX`, `UINT_MAX` from `<limits.h>`; then demonstrate unsigned wrap (`0u - 1`) and `uint8_t` wrap. **Do not** demonstrate signed overflow in a normal build; instead, build a *separate* file with `-fsanitize=undefined` and read the diagnostic.
-2. `floatcheck.c`: show `0.1 + 0.2 == 0.3` fails, then write `nearly_equal(a, b)` with an epsilon and show it succeeds.
-3. In a fresh directory run `git init`, commit `limits.c`, edit it, view `git diff`, commit again, and show `git log --oneline` with at least three meaningful commits.
-
-## 9. Failure drill
-
-1. Write a countdown `for (unsigned i = 5; i >= 0; i--)` and observe it never terminates (interrupt with Ctrl-C, or add a guard counter). Verified output: `5 4 3 2 1 0 4294967295 4294967294 ...`. gcc warns `comparison of unsigned expression in '>= 0' is always true [-Wtype-limits]`. Explain in one sentence, then fix it.
-2. Commit a compiled binary by accident, then add it to `.gitignore`. Notice that ignoring does *not* untrack an already-committed file, and look up `git rm --cached`.
-3. Make an edit you regret, and recover the previous version with `git restore`. Record the exact command.
-
-## 10. Transfer
-
-Change the constraint: you must add two **money** amounts entered as strings like `"19.99"` and `"0.02"` and print `20.01` exactly. Explain why `double` is the wrong tool, and design (on paper) how to parse the input into integer cents.
-
-## 11. Retrieval questions
-
-1. How does two's complement negate a number? Negate `0001 0100`.
-2. Which overflow is defined and which is undefined? What does a compiler do with an undefined case?
-3. Why does `-1 < 1u` evaluate to false?
-4. Why is `0.1 + 0.2 != 0.3`?
-5. What is the difference between `git add` and `git commit`?
-6. Why is `a.out` not committed?
-
-## 12. Evidence to record
-
-`lesson003/EVIDENCE.md`: your `git log --oneline` output; the UBSan diagnostic copied verbatim; the epsilon you chose for `nearly_equal` and one sentence justifying it.
-
-## 13. Common mistakes
-
-- Treating signed wrap as guaranteed because your machine did it.
-- Ignoring `-Wsign-compare` warnings.
-- Comparing floats with `==`, or using floats for currency.
-- `git add .` on a directory full of binaries.
-
-## Assigned material
-
-The supporting source notes that previously lived in the separate reference tree have been folded into the canonical lesson sequence. Use the lecture first, then the adjacent [`WORK.md`](WORK.md). The unified external/source map is [`../../SOURCES.md`](../../SOURCES.md).
-
-## Mastery gate
-
-You may advance when, without notes, you can explain why signed and unsigned overflow differ, predict a mixed signed/unsigned comparison, explain why float `==` is unreliable, and use Git to commit, inspect, and recover your work.
-
-**Do not move on because the example looked familiar.** Familiarity is cheap; blank-page recall is what actually learning costs.
+Open [WORK.md](WORK.md), complete its problems in order, and record your commands and results in [EVIDENCE.md](EVIDENCE.md).

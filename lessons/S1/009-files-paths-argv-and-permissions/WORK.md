@@ -1,15 +1,14 @@
-# Lesson 009 — Problem Set
+# Lesson 009 — Files, Paths, Arguments, and Permissions Problems
 
-**Topic:** Files, Paths, Arguments, and Permissions.
-**Your files:** `code/argv_report.c`, `code/file_probe.c`, `code/line_count.c`, `code/exercise.c`. `demo_*` and `reference/` are teaching examples; implement the assigned task files.
+Read [README.md](README.md), then solve these problems in order.
+
+**Edit:** `code/argv_report.c`, `code/file_probe.c`, `code/line_count.c`, `code/exercise.c`.
 
 ## Problems
 
 1. `argv_report.c`: print `argc` and each `argv[i]`, including a quoted argument.
 2. `line_count.c`: count newline characters in a path from `argv[1]` and return 1 if `fopen` fails.
 3. `file_probe.c`: report a successful open or the errno-based failure, then close the file.
-
-Start with a prediction. Implement the TODOs without opening completed examples. Check one normal input, one boundary, and one failure case. The specifications and TODO prompts are repeated in comments in the student files.
 
 ## Run and check
 
@@ -25,12 +24,12 @@ gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 .\exercise.exe
 ```
 
-## Stretch problem
+## Optional challenge
 
 ### File inspector
 
 Build a CLI that walks user-supplied paths and reports type, size, permissions, and errors. It must distinguish nonexistent paths from inaccessible paths.
 
-## Turn in
+## Submit
 
-In `EVIDENCE.md`, record your prediction, exact command, observed output, one failed attempt and its repair, and the invariant or reasoning behind the result.
+Record the commands and results, one error you fixed, and the reason your solution is correct in [EVIDENCE.md](EVIDENCE.md).
