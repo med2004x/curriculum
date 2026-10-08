@@ -4,11 +4,11 @@ Choose one route. You do not need to read the whole repository first.
 
 ## Systems/backend lessons
 
-1. Read the [Lesson 001 lecture](lessons/001-programs-machines-and-the-terminal/README.md).
-2. Follow the short [Lesson 001 work card](lessons/001-programs-machines-and-the-terminal/WORK.md).
-3. Edit [exercise.c](lessons/001-programs-machines-and-the-terminal/code/exercise.c) in that folder's `code/` directory.
+1. Read the [Lesson 001 lecture](lessons/S1/001-programs-machines-and-the-terminal/README.md).
+2. Follow the short [Lesson 001 work card](lessons/S1/001-programs-machines-and-the-terminal/WORK.md).
+3. Edit [exercise.c](lessons/S1/001-programs-machines-and-the-terminal/code/exercise.c) in that folder's `code/` directory.
 4. Run `python tools/check_lesson_001.py` from the repository root. It should fail on the starter and pass after the exercise prints exactly `Hello, DART!`.
-5. Write your result in [Lesson 001 evidence](lessons/001-programs-machines-and-the-terminal/EVIDENCE.md), then open Lesson 002 in the [lesson index](LESSON-INDEX.md).
+5. Write your result in [Lesson 001 evidence](lessons/S1/001-programs-machines-and-the-terminal/EVIDENCE.md), then open Lesson 002 in the [lesson index](LESSON-INDEX.md).
 
 The lecture's Section 6 suggests creating a separate `lesson001/` directory. For this repository, use the existing `code/` directory as the work folder.
 
@@ -17,7 +17,7 @@ The lecture's Section 6 suggests creating a separate `lesson001/` directory. For
 This machine has a `clang.exe` binary but no C standard headers, and no GCC. It cannot currently build C programs. Follow [SETUP.md](SETUP.md) to install a complete compiler, then run these commands in PowerShell:
 
 ```powershell
-Set-Location ./lessons/001-programs-machines-and-the-terminal/code
+Set-Location ./lessons/S1/001-programs-machines-and-the-terminal/code
 gcc -std=c17 -Wall -Wextra -Wpedantic exercise.c -o exercise.exe
 ./exercise.exe
 $LASTEXITCODE

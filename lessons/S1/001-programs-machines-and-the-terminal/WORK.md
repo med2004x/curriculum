@@ -41,7 +41,7 @@ From the repository root, run `python tools/check_lesson_001.py`. It should fail
 In PowerShell, from the repository root:
 
 ```powershell
-Set-Location ./lessons/001-programs-machines-and-the-terminal/code
+Set-Location ./lessons/S1/001-programs-machines-and-the-terminal/code
 gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello.exe
 ./hello.exe
 $LASTEXITCODE

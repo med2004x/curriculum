@@ -9,7 +9,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "lessons" / "001-programs-machines-and-the-terminal" / "code" / "exercise.c"
+SOURCE = ROOT / "lessons" / "S1" / "001-programs-machines-and-the-terminal" / "code" / "exercise.c"
 EXPECTED = "Hello, DART!\n"
 
 

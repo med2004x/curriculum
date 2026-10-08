@@ -4,7 +4,7 @@ import re
 import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
-lessons = sorted((ROOT / "lessons").glob("[0-9][0-9][0-9]-*"))
+lessons = sorted(p for semester in (ROOT / "lessons" / "S1", ROOT / "lessons" / "S2") for p in semester.glob("[0-9][0-9][0-9]-*"))
 issues = []
 for lesson in lessons:
     if not lesson.is_dir():

@@ -12,7 +12,7 @@ EXTS = {".c", ".h", ".go", ".rs", ".py", ".sql", ".sh", ".asm", ".s", ".json"}
 LOCAL_FILE = re.compile(r"`([^`]+\\.(?:c|h|go|rs|py|sql|sh|asm|s|json|toml|mod|yaml|yml))`", re.I)
 
 failures = []
-lesson_dirs = sorted(LESSONS.glob("[0-9][0-9][0-9]-*"))
+lesson_dirs = sorted(p for semester in ("S1", "S2") for p in (LESSONS / semester).glob("[0-9][0-9][0-9]-*"))
 if len(lesson_dirs) != 100:
     failures.append(f"expected 100 lesson directories, found {len(lesson_dirs)}")
 
@@ -45,7 +45,7 @@ for lesson in lesson_dirs:
 
 # Syntax checks for generated lesson starters. Full project builds are not assumed for PostgreSQL/network/system dependencies.
 if shutil.which("gcc"):
-    for src in sorted(LESSONS.glob("*/code/exercise.c")):
+    for src in sorted(p for lesson in lesson_dirs for p in (lesson / "code").glob("exercise.c")):
         r = subprocess.run(["gcc", "-std=c17", "-Wall", "-Wextra", "-Wpedantic", "-fsyntax-only", str(src)], capture_output=True, text=True)
         if r.returncode:
             failures.append(f"C starter does not compile: {src}: {r.stderr.strip()}")

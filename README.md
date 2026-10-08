@@ -6,7 +6,7 @@ Follow the **[Start Today guide](START-TODAY.md)**. It tells you which lesson to
 
 ## Choose a route
 
-- **Systems/backend:** [100 numbered lessons](CURRICULUM.md), starting at [Lesson 001](lessons/001-programs-machines-and-the-terminal/README.md).
+- **Systems/backend:** [100 numbered lessons](CURRICULUM.md), starting at [Lesson 001](lessons/S1/001-programs-machines-and-the-terminal/README.md).
 - **Semester 1:** [S1 exercises](lessons/S1/).
 - **Semester 2:** [S2 exercises](lessons/S2/).
 

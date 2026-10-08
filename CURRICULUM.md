@@ -6,11 +6,11 @@ This repository supports two LIG semester tracks and one longer engineering sequ
 
 | Route | Entry point | Scope |
 |---|---|---|
-| LIG S1 | [S1 exercises](lessons/S1/) | First-semester subject packs and their evidence requirements |
-| LIG S2 | [S2 exercises](lessons/S2/) | Second-semester subject packs and their evidence requirements |
-| Systems/backend engineering | [Lesson index](LESSON-INDEX.md) | 100 cumulative lessons; cross-linked to LIG subjects where useful |
+| LIG S1 | [S1 folder](lessons/S1/) | Lessons 001?050 and first-semester subject exercises |
+| LIG S2 | [S2 folder](lessons/S2/) | Lessons 051?100 and second-semester subject exercises |
+| Full engineering sequence | [Lesson index](LESSON-INDEX.md) | Continue from S1 into S2; cross-linked to semester subjects where useful |
 
-Do not split the engineering lesson numbers into first 50/last 50: many LIG subjects draw from lessons across both halves. The course exercise files under `lessons/S1/` and `lessons/S2/` are the semester organization.
+The numbered lessons are physically organized by semester: 001?050 are in `lessons/S1/`, and 051?100 are in `lessons/S2/`. Each semester folder also contains its LIG course exercises. Use the lesson index to continue in order.
 
 ## Engineering sequence
 

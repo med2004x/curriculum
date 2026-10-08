@@ -3,7 +3,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-lessons = sorted((ROOT / "lessons").glob("[0-9][0-9][0-9]-*"))
+lessons = sorted(p for semester in ("S1", "S2") for p in (ROOT / "lessons" / semester).glob("[0-9][0-9][0-9]-*"))
 lesson_files = [p for d in lessons for p in (d / "code").rglob("*") if p.is_file()]
 challenges = [p for d in lessons for p in (d / "code").glob("challenge.*") if p.is_file()]
 go_tests = [p for d in lessons for p in (d / "code").rglob("*_test.go")]

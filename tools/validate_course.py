@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LESSONS = ROOT / 'lessons'
 errors: list[str] = []
 
-lesson_dirs = sorted(p for p in LESSONS.iterdir() if p.is_dir() and re.match(r'^\d{3}-', p.name))
+lesson_dirs = sorted((p for semester in ('S1', 'S2') for p in (LESSONS / semester).iterdir() if p.is_dir() and re.match(r'^\d{3}-', p.name)), key=lambda p: p.name)
 if len(lesson_dirs) != 100:
     errors.append(f'expected 100 lesson directories, found {len(lesson_dirs)}')
 
@@ -32,6 +32,9 @@ required_work = [
 for i, d in enumerate(lesson_dirs, 1):
     if not d.name.startswith(f'{i:03d}-'):
         errors.append(f'numbering mismatch: {d.name}, expected {i:03d}-')
+    expected_semester = 'S1' if i <= 50 else 'S2'
+    if d.parent.name != expected_semester:
+        errors.append(f'{d.name}: expected under lessons/{expected_semester}/, found lessons/{d.parent.name}/')
     readme = d/'README.md'
     work = d/'WORK.md'
     if not readme.exists(): errors.append(f'{d.name}: missing README.md')
