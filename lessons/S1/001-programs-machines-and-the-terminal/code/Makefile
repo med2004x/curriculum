@@ -2,6 +2,12 @@ CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra -Wpedantic
 PROGRAMS = task_01 hello greet report arith exercise
 
+ifeq ($(OS),Windows_NT)
+RM = cmd /c del /q
+else
+RM = rm -f
+endif
+
 .PHONY: all check clean $(PROGRAMS)
 
 # `make` builds every lesson program. Each program has its own main function.

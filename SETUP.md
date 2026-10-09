@@ -7,22 +7,22 @@ For Lessons 001 through 024, you need Python 3 and a C compiler with the standar
 This checkout currently has Python, but its available `clang.exe` has no C standard headers and there is no GCC. It cannot build the first C lesson yet. Install a complete compiler toolchain:
 
 1. Install [MSYS2](https://www.msys2.org/) using its official installer.
-2. Open the **MSYS2 UCRT64** terminal and run:
+2. Open the **MSYS2 UCRT64** terminal, update it with `pacman -Syu`, reopen the terminal if it closes, then install the compiler and Make:
 
    ```sh
-   pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make
+   pacman -S --needed mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make
    ```
 
-3. In PowerShell, add the default compiler folder to this terminal session (adjust if you chose a different MSYS2 install folder), then check it:
+3. From the repository root in PowerShell, add GCC and `make` to your user PATH:
 
    ```powershell
-   $env:Path = "C:\msys64\ucrt64\bin;$env:Path"
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tools\setup_windows_make_path.ps1
    gcc --version
    make --version
    python --version
    ```
 
-4. Return to [Start Today](START-TODAY.md) and run the Lesson 001 commands.
+4. Open a new PowerShell terminal so it loads the updated PATH. Then return to [Start Today](START-TODAY.md).
 
 If compilation says `stdio.h` is missing, the compiler is installed without its C development headers or the wrong compiler is being selected. `clang --version` alone does not prove that a usable C toolchain is installed.
 
